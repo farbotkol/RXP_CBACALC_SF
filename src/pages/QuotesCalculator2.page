@@ -1,0 +1,41 @@
+<apex:page standardController="Quote__c" extensions="QuotesControllerExtension" >
+    
+    
+    <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'angular.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'CalcJS.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'LoanProjection.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'LoanProjections.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.RXP_CBACALC, 'CalcCss.css')}"/>
+
+    <apex:form >
+
+        <apex:pageBlock id="quoteEdit" mode="Edit" >
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" onclick="BeforeSave()" action="{!customsave}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+                <apex:commandButton value="Print Schedule" onclick="PrintSchedule()"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection id="detail" title="Quote" columns="2" >
+                <apex:inputField id="clientname" value="{!Quote__c.Client_Name__c}" />
+                <apex:inputHidden id="data" value="{!Quote__c.XML_Calculation_Data__c}" /> 
+                <apex:inputField value="{!Quote__c.Client_Phone__c}" />
+                <apex:inputField id="startdate" value="{!Quote__c.Quote_Start_Date__c}" />
+                <apex:inputField value="{!Quote__c.Client_Fax_Email__c}" />
+                <apex:outputField value="{!Quote__c.Days_to_Expire__c}" />
+                <apex:inputField id="itemtype" value="{!Quote__c.Item_Type__c}" />
+
+                <apex:inputField value="{!Quote__c.Documentation_Fee__c}" />
+                <apex:inputField value="{!Quote__c.Status__c}" />
+                <apex:inputField value="{!Quote__c.Security_Registration_Fee__c}" /> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Additional info" columns="1" showHeader="false"  >
+                <apex:inputField value="{!Quote__c.Addional_Disclosure__c}" style="width:600px"  /> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="rxpCalc" title="Financial Calculators">
+                <c:QuoteComponent/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

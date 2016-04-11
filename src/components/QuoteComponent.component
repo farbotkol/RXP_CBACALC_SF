@@ -1,0 +1,736 @@
+<apex:component>
+    <div ng-controller="RealEstateController" ng-app="RealEstateApp">
+
+        <div style='float: left' class='calctype'>
+            <fieldset>
+                <div><label for='CalcType'>Calculation Type</label>
+                    <select id='CalcType'  name="singleSelect" ng-model="CalcType"
+                                    ng-change='TypeChanged()'
+                                    ng-disabled='DeterminePaymentTerms'>
+                          <option value="1">Finance Lease</option>
+                          <option value="2">Hire Purchase</option>
+                          <option value="3">Equipment Loan</option>
+                          <option value="4">Novated Finance Lease</option>
+                          <option value="5">Protected Lease</option>
+                    </select>
+                    <input ng-model="CalcType" type='number'/>
+                </div>
+            </fieldset>
+       
+        <fieldset>
+        <legend>Seasonal</legend>
+
+        <div>
+
+            <label>
+                <input type="checkbox" 
+                    ng-model="IsSeasonal"
+                    ng-change="ProjectionCalculate()"/>
+                    Seasonal Payments
+                </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[0]"
+                ng-change="ProjectionCalculate()"/>
+                Jan
+            </label>
+            <label>
+                <input type="checkbox"  ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[1]"
+                ng-change="ProjectionCalculate()"/>
+                Feb
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[2]"
+                ng-change="ProjectionCalculate()"/>
+                Mar
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[3]"
+                ng-change="ProjectionCalculate()"/>
+                Apr
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[4]"
+                ng-change="ProjectionCalculate()"/>
+                May
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[5]"
+                ng-change="ProjectionCalculate()"/>
+                Jun
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[6]"
+                ng-change="ProjectionCalculate()"/>
+                Jul
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[7]"
+                ng-change="ProjectionCalculate()"/>
+                Aug
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[8]"
+                ng-change="ProjectionCalculate()"/>
+                Sep
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[9]"
+                ng-change="ProjectionCalculate()"/>
+                Oct
+            </label>
+            <label>
+                <input type="checkbox" ng-disabled="!IsSeasonal"
+                ng-model="Seasonal[10]"
+                ng-change="ProjectionCalculate()"/>
+                Nev
+            </label>
+            <label>
+                <input type="checkbox"
+                ng-model="Seasonal[11]" ng-disabled="!IsSeasonal"
+                ng-change="ProjectionCalculate()"/>
+                Dec
+            </label>
+
+            </div>
+        </fieldset>
+
+     </div>
+
+
+
+
+
+
+     <div style='float: left' class='input'>
+
+        <fieldset>
+            <legend>Details</legend>
+            
+            <div><label for='InAdvanced'>In Arrears or In Advance</label>
+            <select id='InAdvanced'  name="singleSelect" ng-model="InAdvanced"
+                            ng-change='ComputeFromAmountFinanced()'
+                            ng-disabled='DeterminePaymentTerms'>
+                  <option value="true">In Advanced</option>
+                  <option value="false">In Arears</option>
+            </select>
+            <input ng-model="InAdvanced"/>
+            </div>
+
+            <div><label for='Frequency'>Frequency</label>
+                <select id='Frequency'  name="singleSelect" ng-model="Frequency"
+                                ng-change='FrequencyChanged()'
+                                ng-disabled='DeterminePaymentTerms'>
+                      <option value="Monthly">Monthly</option>
+                      <option value="Quarterly">Quarterly</option>
+                      <option value="Half Yearly">Half Yearly</option>
+                      <option value="Yearly">Yearly</option>
+                </select>
+                <input ng-model="Frequency" type='Text'/>
+            </div>
+
+            <div><label for='State'>State</label>
+                <select id='State'  name="singleSelect" ng-model="State"
+                                ng-change='ComputeFromAmountFinanced()'
+                                ng-disabled='DeterminePaymentTerms'>
+                      <option value="NSW">NSW</option>
+                      <option value="QLS">QLD</option>
+                      <option value="VIC">VIC</option>
+                      <option value="SA">SA</option>
+                      <option value="TAS">TAS</option>
+                      <option value="WA">WA</option>
+                      <option value="ACT">ACT</option>
+                      <option value="NT">NT</option>
+
+                </select>
+                <input ng-model="State" type='Text'/>
+            </div>
+
+            <div><label for='LesseeRate'>Start Date</label>
+            <input type='date' ng-model='DDateText' ng-change='ComputeFromAmountFinanced()'/></div>
+            <div><input style='width: 300px' ng-disabled='true' id='DDate' ng-model='DDate' ng-change='ComputeFromAmountFinanced()'/></div>        
+            
+
+            
+            <div><label for='AssetType'>AssetType</label>
+                <select id='AssetType'  name="singleSelect" ng-model="AssetType"
+                                ng-change='ComputeFromAmountFinanced()'
+                                ng-disabled='DeterminePaymentTerms'>
+                      <option value="Car-Luxury">Car-Luxury</option>
+                      <option value="Car-Fuel Efficient">Car-Fuel Efficient</option>
+                      <option value="All Other Assets">All Other Assets</option>
+                </select>
+                <input ng-model="AssetType" type='Text'/>
+            </div>        
+
+
+
+            <div><label for='EquipmentCost'>Equipment Cost (Inc GST_LCT)</label>
+                <input 
+                id='EquipmentCost' 
+                ng-model='EquipmentCost' 
+                ng-change='ComputeFromAmountFinanced()'
+                ng-disabled='DeterminePaymentTerms' type='number'/>
+                From Tax Invoice
+            </div>
+
+
+            <div ng-show='showTradeIn'><label for='TradeIn'>Deposit / Trade-In</label>
+                <input 
+                id='TradeIn' 
+                ng-model='TradeIn' 
+                ng-change='ComputeFromAmountFinanced()'
+                type='number'
+                />
+                From Tax Invoice
+            </div>
+
+            <div><label for='MVRegoCost'>MV Rego Costs</label>
+                <input 
+                id='MVRegoCost' 
+                ng-model='MVRegoCost' 
+                ng-change='ComputeFromAmountFinanced()'
+                ng-disabled='DeterminePaymentTerms' type='number'/>
+                From Tax Invoice
+            </div>
+
+            <div><label for='Options'>Options (incl GST)</label>
+                <input 
+                id='Options' 
+                ng-model='Options' 
+                ng-change='ComputeFromAmountFinanced()'
+                ng-disabled='DeterminePaymentTerms' type='number'/>
+                From Tax Invoice
+            </div>
+
+            <div><label for='SupplierDelivery'>Supplier Delivery / Extras</label>
+                <input 
+                id='SupplierDelivery' 
+                ng-model='SupplierDelivery' 
+                ng-change='ComputeFromAmountFinanced()'
+                ng-disabled='DeterminePaymentTerms' type='number'/>
+                From Tax Invoice
+            </div>
+
+            <div><label for='SupplierDiscount'>Supplier Discount</label>
+                <input 
+                id='SupplierDiscount' 
+                ng-model='SupplierDiscount' 
+                ng-change='ComputeFromAmountFinanced()'
+                ng-disabled='DeterminePaymentTerms' type='number'/>
+                From Tax Invoice
+            </div>
+
+            <div><label for='FeesAndChargesFinanced'>Fees &amp; Charges Financed</label>
+                <input 
+                id='FeesAndChargesFinanced' 
+                ng-model='FeesAndChargesFinanced' 
+                ng-change='ComputeFromAmountFinanced()'
+                ng-disabled='DeterminePaymentTerms' type='number'/>
+            </div>
+
+            <div><label for='EquipmentCostExclRego'>Equip Cost excl MV Rego Cost</label>
+                <input disabled="disabled"
+                id='EquipmentCostExclRego' 
+                ng-model='EquipmentCostExclRego' 
+                ng-change='ComputeFromAmountFinanced()' type='number'
+                />
+            </div>
+
+            <div><label for='TotalEquipmentCost'>Total Equipment Cost</label>
+                <input disabled="disabled"
+                id='TotalEquipmentCost' 
+                ng-model='TotalEquipmentCost' 
+                ng-change='ComputeFromAmountFinanced()' type='number'
+                />
+            </div>
+
+            <div><label for='LessorRate'>Lessor Rate %</label>
+            <input 
+            id='LessorRate' 
+            ng-model='LessorRate' 
+            ng-change='ComputeFromAmountFinanced()' percent='percent'
+            />
+            </div>
+
+            <div><label for='TermInMonths'>Term (Months)</label>
+                <input 
+                id='TermInMonths' 
+                ng-model='TermInMonths' 
+                ng-change='ComputeFromAmountFinanced()' type='number'
+                />
+            </div>
+
+            <div ng-show='showDelayedPayment'><label for='DelayedPayment'>Delayed Payment (Months)</label>
+                <input 
+                id='DelayedPayment' 
+                ng-model='DelayedPayment' 
+                ng-change='ComputeFromAmountFinanced()' type='number' min="0" max="{{TermInMonths - 1}}" 
+                /> 
+            </div>
+
+
+        </fieldset>
+        <fieldset>
+        <legend>Brokerage Details</legend>
+
+        <div><label for='BrokageAmount'>Brokerage (Excl GST)</label>
+            <input 
+            id='BrokageAmount' 
+            ng-model='BrokageAmount' 
+            ng-change='CalculateBrokagePercent()' type='number'
+            />
+        </div>
+
+        <div><label for='BrokagePercent'>Brokerage %</label>
+            <input 
+            id='BrokagePercent' 
+            ng-model='BrokagePercent' 
+            ng-change='CalculateBrokageAmount()' percent='percent'
+            />
+        </div>
+
+         <div><label for='BalloonAmount'>Balloon Amount</label>
+            <input 
+            id='BalloonAmount' 
+            ng-model='ResidualAmount' 
+            ng-change='CalculateResidualPercent()' type='number'
+            />
+        </div>
+
+
+
+
+
+        <div><label for='BalloonPercent'>Balloon %</label>
+            <input 
+            id='BalloonPercent' 
+            ng-model='ResidualPercent' 
+            ng-change='CalculateResidualAmount()' percent='percent'
+            />
+        </div>
+
+
+         <div ng-show='showGSTOnResidual'>
+            <label for='GSTOnResidual'>GST On Residual</label>
+            <input disabled="disabled"
+            id='GSTOnResidual' 
+            value='{{GSTOnResidual()}}'
+        
+            />
+        </div>
+
+        <div ng-show='showResidualAmountIncGST'>
+            <label for='ResidualAmountIncGST'>Residual Amount($) (Inc. GST)</label>
+            <input disabled="disabled"
+            id='ResidualAmountIncGST' 
+            value='{{BalloonAmount()}}' 
+            />
+        </div>
+
+        <div ng-show='!showAmountFinancedForHP'><label for='AmountFinanced'>Amount Financed</label>
+        <input disabled="disabled"
+        id='AmountFinanced' 
+        ng-model='AmountFinanced' 
+        />
+        </div>
+
+        <div ng-show='showAmountFinancedForHP'><label for='AmountFinanced'>Amount to be Financed</label>
+        <input disabled="disabled"
+        id='AmountFinanced' 
+        value='{{AmountFinancedHirePurchaseEquipmentLoan()}}' 
+        />
+        </div>
+
+    </fieldset>
+
+
+
+    </div>
+
+
+    <div class='summary' style='float: left'>
+    <fieldset>
+        <legend>{{CalcTypeName}} Summary</legend>
+        <div ng-show='showAmountFinancedForHP' >
+            <div >
+                <label for='AmountFinancedForHP'>Amount Financed</label>
+                <input disabled="disabled"
+                id='AmountFinancedForHP' 
+                ng-model='AmountFinanced' 
+                />
+            </div>
+
+            <div  >
+                <label for='PurchasePriceOfgoods'>Purchase price of goods (Inc. GST)</label>
+                <input disabled="disabled"
+                id='PurchasePriceOfgoods' 
+                ng-model='EquipmentCostExclRego' 
+                />
+            </div>
+
+            <div  >
+                <label for='VehicleRegistration'>Vehicle Registration (inc. Stamp &amp; Duty  CTP)</label>
+                <input disabled="disabled"
+                id='VehicleRegistration' 
+                ng-model='MVRegoCost' 
+                />
+            </div>
+
+            <div  >
+                <label for='FeeAndOther'>Fees &amp; other amounts financed</label>
+                <input disabled="disabled"
+                id='FeeAndOther' 
+                ng-model='FeesAndChargesFinanced' 
+                />
+            </div>
+
+            <div  >
+                <label for='TaxOnTheContract'>Tax on the Contract</label>
+                <input disabled="disabled"
+                id='TaxOnTheContract' 
+                value='{{TotalGST()}}' 
+                />
+            </div>
+
+            <div  >
+                <label for='InputTaxCridit'>Input Tax Cridit on purchase</label>
+                <input disabled="disabled"
+                id='InputTaxCridit' 
+                value='{{GST()}}' 
+                />
+            </div>
+
+            <div  >
+                <label for='Deposit'>Deposit (if applicable)</label>
+                <input disabled="disabled"
+                id='Deposit' 
+                value='{{TradeIn}}' 
+                />
+            </div>
+
+            <hr/>
+
+            <div>
+                <label for='TotalAmountInterest'>Total Amount of Interest (Payable under the contract)</label>
+                <input disabled="disabled"
+                id='TotalAmountInterest' 
+                value='{{TotalAmountInterestFromSchedule|number:2}}'        />
+            </div>
+
+            <div>
+                <label for='TotalAmountRepayments'>Total Amount of Repayments</label>
+                <input disabled="disabled"
+                id='TotalAmountRepayments' 
+                value='{{TotalAmountRepaymentsFromSchedule|number:2}}' 
+                />
+            </div>
+
+
+            <div>
+                <label for='TermInMonthsInstallment'>Term (Months)</label>
+                <input disabled="disabled"
+                id='TermInMonthsInstallment' 
+                value='{{NumberInstallmentsFromSchedule|number}}' 
+                />
+            </div>
+
+            <hr/>
+            <div >
+                <label for='NumberInstallments'>Number of Rental Payments</label>
+                <input disabled="disabled"
+                id='NumberInstallments' 
+                value='{{NumberInstallments()|number}}' 
+                />
+            </div>
+
+            <div>
+                <label for='Frequency'>Frequency</label>
+                <input disabled="disabled"
+                id='Frequency' 
+                value='{{Frequency}}' 
+                />
+            </div>
+
+            <div>
+                <label for='TotalInstallment'>Rental Payment Amount</label>
+                <input disabled="disabled"
+                id='TotalInstallment' 
+                value='{{TotalInstallment()|number}}' 
+                />
+            </div>
+
+            <div>
+                <label for='CreditCharges'>Other Credit Charges</label>
+                <input disabled="disabled"
+                id='_CreditCharges' 
+                value='{{_CreditCharges|number}}' 
+                />
+            </div>
+
+            <div>
+                <label for='BalloonRepayment'>Balloon Repayment</label>
+                <input disabled="disabled"
+                id='BalloonRepayment' 
+                value='{{BalloonAmount()|number}}' 
+                />
+            </div>
+
+
+        </div>      
+
+
+        <div ng-show='!showAmountFinancedForHP' >
+            <div ng-show='showTotalAmountFinanced'><label for='TotalAmountFinanced'>Loan Amount</label>
+            <input disabled="disabled"
+            id='TotalAmountFinanced' 
+            value='{{AmountFinanced}}' 
+            
+            />
+            </div>
+
+            <div ng-show='showCostOfGoods'>
+                <label for='CostOfGoods'>Cost Of Goods  (Inc GST)</label>
+                <input disabled="disabled"
+                id='CostOfGoods' 
+                ng-model='TotalEquipmentCost' 
+                
+                />
+            </div>
+
+            <div ng-show='showPlusFeesAndChargesFinanced'><label for='PlusFeesAndChargesFinanced'>Plus Fees &amp; Charges Financed</label>
+                <input disabled="disabled"
+                id='PlusFeesAndChargesFinanced' 
+                ng-model='FeesAndChargesFinanced' 
+                />
+            </div>
+
+            <div ng-show='showResidualValueIncGST'>
+                <label for='ResidualValueIncGST) '>Residual Value (Inc. GST) </label>
+                <input disabled="disabled"
+                id='ResidualValueIncGST' 
+                value='{{BalloonAmount()}}'
+                />
+            </div>
+
+
+            <div ng-show='showTotalAmountInterest'>
+                <label for='TotalAmountInterest'>Total Amount of Interest Payable</label>
+                <input disabled="disabled"
+                id='TotalAmountInterest' 
+                value='{{TotalAmountInterestFromSchedule|number:2}}'        />
+            </div>
+
+            <div ng-show='showTotalAmountRepayments'>
+                <label for='TotalAmountRepayments'>Total Amount of Repayments</label>
+                <input disabled="disabled"
+                id='TotalAmountRepayments' 
+                value='{{TotalAmountRepaymentsFromSchedule|number:2}}' 
+                />
+            </div>
+
+
+            <div>
+                <label for='TermInMonthsInstallment'>Term (Months)</label>
+                <input disabled="disabled"
+                id='TermInMonthsInstallment' 
+                value='{{NumberInstallmentsFromSchedule|number}}' 
+                />
+            </div>
+                
+
+                <!-- ng-show='showNumberOfRentals' value='{{NumberInstallments()}}' -->
+            <div ng-show='showNumberOfRentals'>
+                <label for='NumberOfRentals'>Number Of Rentals</label>
+                <input disabled="disabled"
+                id='NumberOfRentals' 
+                value='{{NumberInstallments()}}'
+                />
+            </div>
+
+            <div ng-show='showPayable'>
+                <label for='Payable'>Payable</label>
+                <input disabled="disabled"
+                id='Payable' 
+                value='{{Frequency}}'
+                />
+            </div>
+        </div>
+            
+
+        <hr/>
+
+        <div ng-show='showHirePurchaseSummaryPart2'>
+            <div>
+                <label for='TotalInstallment'>Installment Amount</label>
+                <input disabled="disabled"
+                id='TotalInstallment' 
+                value='{{TotalInstallment()|number}}' 
+                />
+            </div>
+            <!--ng-show='showNumberInstallments'-->
+            <div >
+                <label for='NumberInstallments'>Number of Installments</label>
+                <input disabled="disabled"
+                id='NumberInstallments' 
+                value='{{NumberInstallments()|number}}' 
+                />
+            </div>
+
+
+            <div>
+                <label for='Frequency'>Frequency</label>
+                <input disabled="disabled"
+                id='Frequency' 
+                value='{{Frequency}}' 
+                />
+            </div>
+
+            <div>
+                <label for='BalloonRepayment'>Balloon Repayment</label>
+                <input disabled="disabled"
+                id='BalloonRepayment' 
+                value='{{BalloonAmount()|number}}' 
+                />
+            </div>
+
+
+            <div>
+                <label for='MortgageDuty'>Mortgage Duty</label>
+                <input disabled="disabled"
+                id='MortgageDuty' 
+                value='{{MortgageDuty|number}}' 
+                />
+            </div>
+
+            <hr/>
+        </div>  
+
+
+        <div ng-show='showFinanceLeaseSummaryPart2'>
+            <div>
+                <label for='RentalAmount'>Rental Amount</label>
+                <input disabled="disabled"
+                id='RentalAmount' 
+                value='{{TotalInstallment()|number}}'
+                />
+            </div>
+
+            <div>
+                <label for='GSTOnRental'>GST On Rental</label>
+                <input disabled="disabled"
+                id='GSTOnRental' 
+                value='{{GSTRentalDuty()|number}}' 
+                />
+            </div>
+
+            <div>
+                <label for='RentalInstallment'>Rental Installment</label>
+                <input disabled="disabled"
+                id='RentalInstallment' 
+                value='{{GSTRentalDuty() + TotalInstallment()|number}}' 
+                />
+            </div>
+
+            <hr/>
+        </div>  
+
+        
+        <div>
+            <div><label for='LesseeRate'>Lessee Rate</label>
+            <input disabled="disabled"
+            id='LesseeRate' 
+            ng-model='LesseeRate' 
+            percent='percent'
+            />
+            </div>
+
+            <div><label for='LessorRate2'>Lessor Rate</label>
+            <input disabled="disabled"
+            id='LessorRate2' 
+            ng-model='LessorRate' 
+            percent='percent'
+            />
+            </div>
+
+
+            <div><label for='GST'>GST</label>
+            <input disabled="disabled"
+            id='GST' 
+            value='{{GST()}}' 
+            
+            />
+            </div>
+
+            <div><label for='LCT'>LCT</label>
+            <input disabled="disabled"
+            id='LCT' 
+            value='{{LCT()}}' 
+            />
+            </div>
+
+
+            <div ng-show='showITC'><label for='LCT'>ITC</label>
+            <input disabled="disabled"
+            id='ITC' 
+            value='{{ITC()}}' 
+            />
+            </div>
+        </div>
+
+     </fieldset>
+     </div>
+
+         <div class='amort' >
+    <fieldset>
+        <legend>Amortization Schedule New</legend>    
+
+        <table  class='table'>
+            <thead>
+                <tr class='header'>
+                   <th>Term</th>
+                   <th>Date</th>
+                   <th>Opening Balance</th>
+                   <th>Residual</th>
+                   <th>Payment</th>
+                   <th>Add Payment</th>
+                   <th>Principal Amount</th>
+                   <th>Interest Amount</th>
+                   <th>Closing Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in loanProjectionLesse.loanProjections">
+                    <td>{{x.Term }}</td>
+                    <td>{{x.DDate | date : 'mediumDate'}}</td>
+                    <td>{{x.OpeningBalance | number:2 }}</td>
+                    <td>{{x.AutoAdditionalPayment  | number:2}}</td>
+                    <td>{{x.Payment  | number:2}}</td>
+                    <td>
+                          <input ng-blur='ComputeAddPaymentChange()'
+                            id='AdditionalPayment' 
+                             ng-model='x.AdditionalPayment' type='number'/>
+                            <!--{{x.AdditionalPayment | number:2 }}-->
+                    </td>
+                    <td>{{x.PrincipalAmount | number:2 }}</td>
+                    <td>{{x.InterestAmount  | number:2}}</td>
+                    <td>{{x.ClosingBalance | number:2 }}</td>
+                </tr>
+            </tbody>
+       
+        </table>    
+    </fieldset>
+
+    </div>
+ 
+     </div>
+</apex:component>

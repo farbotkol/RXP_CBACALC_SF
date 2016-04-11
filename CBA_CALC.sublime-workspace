@@ -1,0 +1,1348 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"le",
+				"legacy"
+			],
+			[
+				"end",
+				"endsWith"
+			],
+			[
+				"c",
+				"Contact__c 	Lookup"
+			],
+			[
+				"Setup",
+				"SetupUtil"
+			],
+			[
+				"sys",
+				"System"
+			],
+			[
+				"RMSE",
+				"RMSEsbDto	[Custom Apex Class]"
+			],
+			[
+				"RMS",
+				"RMSWrapperCtrl	[Custom Apex Class]"
+			],
+			[
+				"remoteA",
+				"RemoteActionResponse"
+			],
+			[
+				"OCDR",
+				"OCDRHelper"
+			],
+			[
+				"responseO",
+				"responseObj"
+			],
+			[
+				"resp",
+				"response"
+			],
+			[
+				"re",
+				"responseObj"
+			],
+			[
+				"ocdr",
+				"ocdrHelper"
+			],
+			[
+				"gr",
+				"grossAmount"
+			],
+			[
+				"STD",
+				"PUBLIC STD_PDT_CODE_ONLINEDRREC	String"
+			],
+			[
+				"p",
+				"productCode"
+			],
+			[
+				"rms",
+				"rmsGlobal"
+			],
+			[
+				"price",
+				"priceItems"
+			],
+			[
+				"date",
+				"DateTime"
+			],
+			[
+				"OnlineDir",
+				"onlineDrivingRecords"
+			],
+			[
+				"crea",
+				"PUBLIC createPDFAttachmentLink(String base64Str, String fileName, String token) 	String"
+			],
+			[
+				"sta",
+				"statusCode"
+			],
+			[
+				"pdf",
+				"pdfLink"
+			],
+			[
+				"tra",
+				"transactionToken"
+			],
+			[
+				"get",
+				"getOCDRPDF"
+			],
+			[
+				"ret",
+				"returned"
+			],
+			[
+				"pr",
+				"priceItem"
+			],
+			[
+				"n",
+				"name"
+			],
+			[
+				"pu",
+				"purchase"
+			],
+			[
+				"o",
+				"oDR"
+			],
+			[
+				"cut",
+				"customer"
+			],
+			[
+				"cu",
+				"currentLicence"
+			],
+			[
+				"mo",
+				"mostRecentOffenceDate"
+			],
+			[
+				"d",
+				"PUBLIC demerits	Demerits"
+			],
+			[
+				"El",
+				"eligibility"
+			],
+			[
+				"dem",
+				"demerits"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/pages/QuotesCalculator.page",
+			"settings":
+			{
+				"buffer_size": 4200,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pages/QuotesCalculator2.page",
+			"settings":
+			{
+				"buffer_size": 13634,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/QuotesControllerExtension.cls",
+			"settings":
+			{
+				"buffer_size": 2472,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pages/QuotesCalculator2.page-meta.xml",
+			"settings":
+			{
+				"buffer_size": 293,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ApexPage xmlns=\"http://soap.sforce.com/2006/04/metadata\">\n    <apiVersion>20.0</apiVersion>\n    <availableInTouch>false</availableInTouch>\n    <confirmationTokenRequired>false</confirmationTokenRequired>\n    <label>Quotes Calculator</label>\n</ApexPage>\n",
+			"file": "src/pages/QuotesCalculator.page-meta.xml",
+			"file_size": 293,
+			"file_write_time": 131048258598545259,
+			"settings":
+			{
+				"buffer_size": 332,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 659.0
+	},
+	"console":
+	{
+		"height": 377.0,
+		"history":
+		[
+			"Package Control: Install Package",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"Package Control: Install Package"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/MavensMate/CBA_CALC",
+		"/C/MavensMate/CBA_CALC/src",
+		"/C/MavensMate/CBA_CALC/src/classes",
+		"/C/MavensMate/CBA_CALC/src/pages",
+		"/C/MavensMate/CBA_CALC/src/staticresources"
+	],
+	"file_history":
+	[
+		"/C/Users/lukef/Desktop/cba/RXP_CBACALC/tester.js",
+		"/C/Users/lukef/Desktop/cba/RXP_CBACALC/LoanProjection",
+		"/C/Users/lukef/Desktop/cba/RXP_CBACALC/calcUI.html",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSWrapperCtrlTestUtil.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSEsbDto.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSReplaceRegCertificateHandler.cls",
+		"/C/Users/lukef/Downloads/testsize",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsReplaceRegoCertTransactionInfo.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/Test_RMSReplaceRegCertificate.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/Mockable_Utilities.cls",
+		"/C/MavensMate/ReplaceRego/src/pages/index.page",
+		"/C/MavensMate/ReplaceRego/src/build.xml",
+		"/C/MavensMate/ReplaceRego/src/build.properties",
+		"/C/MavensMate/ReplaceRego/src/classes/SetupUtil.cls",
+		"/C/MavensMate/ReplaceRego/src/objects/ma_Constants__c.object",
+		"/C/MavensMate/ReplaceRego/destructiveChanges.xml",
+		"/C/MavensMate/ReplaceRego/build_bamboo.xml",
+		"/C/MavensMate/ReplaceRego/build_bamboo.properties",
+		"/C/MavensMate/ReplaceRego/src/classes/UserServiceReqHandler.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/UserService.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsUtil.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSWrapperCtrl.cls",
+		"/C/MavensMate/ReplaceRego/src/components/DVSCtrlVF.component",
+		"/C/MavensMate/ReplaceRego/src/components/DVSCtrlVF.component-meta.xml",
+		"/C/MavensMate/ReplaceRego/build.xml",
+		"/C/MavensMate/ReplaceRego/build.properties",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSReplaceLicenceHandlerTest.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSReplaceLicenceHandler.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsGlobal.cls",
+		"/C/MavensMate/ReplaceRego/src/triggers/FormManagementTrigger.trigger",
+		"/C/MavensMate/ReplaceRego - Copy/build.properties",
+		"/C/MavensMate/ReplaceRego/src/classes/Mockable_Utilities_502.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsEmailServ.cls",
+		"/C/Users/lukef/AppData/Roaming/Sublime Text 3/Packages/User/mavensmate.sublime-settings",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsPSPPaymentServiceV1.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsWSGetTransactionDetails.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/AcceptedTermsAndConditionsSelector.cls",
+		"/C/MavensMate/ReplaceRego/build.properties.sample",
+		"/C/MavensMate/ReplaceRego/deployment/src/classes/RMSReplaceRegCertificateHandler.cls",
+		"/C/MavensMate/ReplaceRego/.gitignore",
+		"/C/MavensMate/ReplaceRego/deploy_bamboo.xml",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsCommonWrapper.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSTransactionService.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsTransactionResHandlerTest.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsTransactionResHandler.cls",
+		"/C/MavensMate/ReplaceRego/deployment/src/classes/SetupUtil.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsEsbRegoServ.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/receiptBlockProviderCtrl.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsTransactionInfoBase.cls",
+		"/C/MavensMate/ReplaceRego/deployment/src/classes/rmsEsbErrorDetails.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/Test_RMSFreeRegoCheckHandler.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSEsbDto.cls-meta.xml",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsEsbErrorDetails.cls",
+		"/C/MavensMate/ReplaceRego/src/labels/CustomLabels.labels",
+		"/C/MavensMate/ReplaceRego/deployment/src/labels/CustomLabels.labels",
+		"/C/MavensMate/ReplaceRego/deployment/src/classes/RMSWrapperCtrl.cls.orig",
+		"/C/MavensMate/ReplaceRego/src/classes/SetupUtil.cls.orig",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsReceiptDataDetailsCtrlV1.cls",
+		"/C/MavensMate/ReplaceRego/deployment/src/classes/Test_RMSReplaceRegCertificate.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSWrapperCtrl.cls-meta.xml",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsTransactionReqHandler.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsTestUtil.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSFreeRegoCheckHandler.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsFulfillmentRequestGenerator.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsSessionLogSvc.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSTransactionHelper.cls",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSFreeRegoCheckHandler.cls-meta.xml",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSReplaceLicenceHandler.cls-meta.xml",
+		"/C/MavensMate/ReplaceRego/deployment/src/classes/SetupUtil.cls.orig",
+		"/C/MavensMate/ReplaceRego/src/objects/RMSSettings__c.object",
+		"/C/MavensMate/ReplaceRego/src/objects/Product2.object",
+		"/C/MavensMate/ReplaceRego/src/objects/Agency_Transaction__c.object",
+		"/C/MavensMate/ReplaceRego/src/pages/formsDataView.page",
+		"/C/MavensMate/ReplaceRego/src/classes/rmsRemoterTesterCtrl.cls-meta.xml",
+		"/C/MavensMate/ReplaceRego/src/pages/rmsRemoterTester.page",
+		"/C/MavensMate/ReplaceRego/src/pages/rmsRemoterTester.page-meta.xml",
+		"/C/MavensMate/ReplaceRego/src/classes/RMSFreeRegoCheckHandler_BACKUP_9692.cls",
+		"/C/MavensMate/SFBackend/src/classes/RMSFreeRegoCheckHandler.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsEmailServ.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsEsbRegoServ.cls",
+		"/C/MavensMate/SFBackend/src/classes/maUtil.cls",
+		"/C/MavensMate/SFBackend/src/classes/Test_RMSFreeRegoCheckHandler.cls",
+		"/C/MavensMate/SFBackend/src/classes/Mockable_Utilities.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsTransactionInfoBase.cls",
+		"/C/MavensMate/SFBackend/src/profiles/Customer Community Login User.profile",
+		"/C/MavensMate/SFBackend/src/classes/SetupUtil.cls",
+		"/C/MavensMate/SFBackend/src/pages/index.page",
+		"/C/MavensMate/SFBackend/build.xml",
+		"/C/MavensMate/SFBackend/build.properties",
+		"/C/MavensMate/SFBackend/src/email/My_Account/R2_Agency_Activity_Notification.email",
+		"/C/MavensMate/SFBackend/src/classes/SetupUtil.cls.orig",
+		"/C/MavensMate/SFBackend/deployment/src/classes/SetupUtil.cls",
+		"/C/MavensMate/SFBackend/config/.settings",
+		"/C/MavensMate/SFBackend/SFBackend.sublime-settings",
+		"/C/MavensMate/SFBackend/SFBackend.sublime-project",
+		"/C/MavensMate/SFBackend - Copy (3)/build.xml",
+		"/C/MavensMate/SFBackend/src/classes/OCDRCheckEligibilityHandler.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsGlobal.cls",
+		"/C/MavensMate/SFBackend/src/classes/RMSWrapperCtrl.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsPSPPaymentServiceV1.cls",
+		"/C/MavensMate/SFBackend/src/classes/RMSEsbDto.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsUtil.cls",
+		"/C/MavensMate/SFBackend/src/classes/RMSTransactionService.cls",
+		"/C/MavensMate/SFBackend/src/classes/UserServiceHelper.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsReceiptDataDetailsCtrlV1.cls",
+		"/C/MavensMate/SFBackend/src/email/RMS_EToll_Account/Statements_pop_up_blocker_preventing_download.email",
+		"/C/MavensMate/SFBackend - Copy (2)/build.xml",
+		"/C/MavensMate/SFBackend/src/classes/rmsWSGetTransactionDetails.cls",
+		"/C/MavensMate/SFBackend/src/classes/UserService.cls",
+		"/C/MavensMate/SFBackend/src/classes/RequestHelper.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsSessionLogSvc.cls",
+		"/C/MavensMate/SFBackend/src/classes/receiptBlockProviderCtrlTest.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsSessionLogDmn.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsSessionLog.cls",
+		"/C/MavensMate/SFBackend/src/pages/pspReceiptPage.page",
+		"/C/MavensMate/SFBackend/src/pages/pspCancelPage.page",
+		"/C/MavensMate/SFBackend/deployment/src/classes/rmsRenewLicenceTransactionInfo.cls",
+		"/C/MavensMate/SFBackend/deployment/src/classes/OCDRCheckEligibilityHandler.cls",
+		"/C/MavensMate/SFBackend/src/reportTypes/Participating_Businesses_and_Renewal_Responses.reportType",
+		"/C/MavensMate/SFBackend/src/classes/rmsPspPaymentApiWrapperV1.cls",
+		"/C/MavensMate/SFBackend/src/profiles/My Service NSW Account Profile.profile",
+		"/C/MavensMate/SFBackend/src/profiles/SNSW Customer Community Login.profile",
+		"/C/MavensMate/SFBackend/src/classes/ESBErrorDetails.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsPSPServiceCtrl.cls",
+		"/C/MavensMate/SFBackend/src/classes/RemoteActionResponse.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsTransferRegoTransactionInfo.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsRenewRegoTransactionInfo.cls",
+		"/C/MavensMate/SFBackend/src/classes/rmsRenewLicenceTransactionInfo.cls"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"percent",
+			"input",
+			"IsSeasonal",
+			"input",
+			"&",
+			"j_id0:j_id1:quoteEdit:detail:data",
+			"this.Seasonal",
+			"init",
+			"NumberInstallments",
+			"Number of Rental Payments",
+			"Extra Payments",
+			" \n",
+			"for",
+			"loanProjectionLesse",
+			"$scope.TableLessee",
+			"Term (Months)",
+			"Residual Value (Inc. GST)",
+			"TotalAmountFinanced",
+			"ComputeTotalAmountFinanced",
+			"TotalAmountFinanced",
+			"835",
+			")];\n",
+			"ComputeAmortizationFactor",
+			"ComputeFromLesseeRate",
+			"Start Date",
+			"DDate",
+			"pDDate",
+			"summary",
+			"BLOCK",
+			"$scope.InAdvanced",
+			"BrokageAmount(",
+			"BrokageAmount",
+			"AmountFinanced",
+			"TotalAmountFinanced",
+			"ScheduledPaymentPerFreq",
+			"TotalInstallment",
+			"GSTPercentRate",
+			"TotalInstallment",
+			"Rental Amount",
+			"Total Amount of Interes",
+			"Total Amount of Interest (Payable under the contract)",
+			"TotalAmountRepayments",
+			"Repayment",
+			"TotalAmountRepayments",
+			"Total Amount of Repayments",
+			"ComputeDownPayment",
+			"ComputeFromDownPaymentPercent",
+			"ComputeFromDownPaymentPercent ",
+			"ComputeAmortizationFactor",
+			"DownPayment",
+			"this.",
+			"this.model.",
+			"ClosingBalanceRounded",
+			"OpeningBalanceRounded =",
+			"PrincipalRounded = ",
+			"InterestRounded",
+			">\n",
+			"RealEstateController",
+			"RealEstateApp",
+			"NaN",
+			"_loc_1",
+			"param11",
+			"param10",
+			"param9",
+			"param8",
+			"param7",
+			"param6",
+			"param5",
+			"param4",
+			"param3",
+			"param2",
+			"param1",
+			":Number",
+			"_[0-9]*",
+			"private ",
+			": function() {",
+			"_loc_1",
+			":Number",
+			"public ",
+			"}// end function",
+			"() : Number\n    {",
+			"public function get ",
+			"Amortizations",
+			"CreateAmortizationSchedule",
+			"Installment Amount",
+			"showITC",
+			"_compoundGSTonCreditCharges",
+			"TotalGST",
+			"/>\n",
+			"$scope.ComputePMT(",
+			"thresholdDistance",
+			"AmountFinanced",
+			"$scope.DelayedPayment",
+			"$scope.itc",
+			"$scope.GST",
+			"scope.ITC",
+			"ITC",
+			"GST(",
+			"GST",
+			"Itc",
+			"ICT",
+			"showICT",
+			"$scope.ITC",
+			"ITC",
+			"ITC_HPEL",
+			"GST_HPEL",
+			"ITC_HPEL",
+			"GST_HPEL",
+			"ITC_HPEL",
+			"ITCLease",
+			"LCT",
+			"RentalInstallment",
+			"GSTPercentRate",
+			"SARentalDuty",
+			"Installment Amount",
+			"Installment Amount ",
+			" <div class='amort' style='float: left'>",
+			"PMT",
+			"$scope.NumberInstallments",
+			"NumberInstallments",
+			"FrequencyPerPeriod",
+			"IsIrregular",
+			"NumberInstallments",
+			"GSTPercentRate",
+			"ResidualAmount",
+			"GSTOnResidual",
+			"Residual",
+			"ITCLease"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"&amp;",
+			"$scope.AddPayments",
+			"$scope.",
+			"pDelayedPayment11",
+			"pSeasonal10",
+			"pTableLessee9",
+			"pResidualAmount",
+			"pInAdvanced",
+			"pTermInMonths",
+			"pLessorRateDiv12",
+			"pFrequencyPerPeriod",
+			"pRegularPaymentOverride",
+			"pTotalAmountFinanced2",
+			"pDDate1",
+			"",
+			" = function() {",
+			"0",
+			"",
+			"},",
+			": function() {",
+			"",
+			"showITC",
+			"$scope",
+			"LesseeRate",
+			";",
+			" = ",
+			"$scope.",
+			"FrequencyPerPeriod",
+			"NumberInstallments ",
+			"InAdvanced",
+			"ResidualAmount",
+			"AmountFinanced",
+			"DelayedPayment",
+			"FrequencyPerPeriod",
+			"TermInMonths",
+			"RentalPMT",
+			"",
+			"' + \\n",
+			"' +",
+			"'",
+			"2015-12-12",
+			"());",
+			"res.setBody(",
+			"",
+			"\\\"",
+			"\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\"",
+			"",
+			"\\\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/pages/QuotesCalculator.page",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3221,
+								3288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/pages/QuotesCalculator2.page",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12755,
+								12755
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6775.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/classes/QuotesControllerExtension.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2472,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/pages/QuotesCalculator2.page-meta.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/pages/QuotesCalculator.page-meta.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 332,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.MavensMate-OutputPanel":
+	{
+		"height": 395.0
+	},
+	"output.find_results":
+	{
+		"height": 274.0
+	},
+	"pinned_build_system": "",
+	"project": "CBA_CALC.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"test",
+				"tester.js"
+			],
+			[
+				"pro",
+				"LoanProjection.js"
+			],
+			[
+				"c",
+				"calcUI.html"
+			],
+			[
+				"",
+				"calcUI.html"
+			],
+			[
+				"rmswrappercrltestutil",
+				"src\\classes\\RMSWrapperCtrlTestUtil.cls"
+			],
+			[
+				"r",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"rmsreplaceregcertificatehandler",
+				"src\\classes\\RMSReplaceRegCertificateHandler.cls"
+			],
+			[
+				"rmsreplacerego",
+				"src\\classes\\rmsReplaceRegoCertTransactionInfo.cls"
+			],
+			[
+				"rms",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"mockable_utilities",
+				"src\\classes\\Mockable_Utilities.cls"
+			],
+			[
+				"rmswrapperctrltestutil",
+				"src\\classes\\RMSWrapperCtrlTestUtil.cls"
+			],
+			[
+				"test_rmsr",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"inde",
+				"src\\pages\\index.page"
+			],
+			[
+				"setuputil",
+				"src\\classes\\SetupUtil.cls"
+			],
+			[
+				"index",
+				"src\\pages\\index.page"
+			],
+			[
+				"ma_co",
+				"src\\objects\\ma_Constants__c.object"
+			],
+			[
+				"ma_con",
+				"src\\objects\\ma_Constants__c.object"
+			],
+			[
+				"moc",
+				"src\\classes\\Mockable_Utilities.cls"
+			],
+			[
+				"test_rms",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"rmswr",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"userservicehandler",
+				"src\\classes\\UserServiceReqHandler.cls"
+			],
+			[
+				"userservice",
+				"src\\classes\\UserService.cls"
+			],
+			[
+				"rmsutil",
+				"src\\classes\\rmsUtil.cls"
+			],
+			[
+				"mock",
+				"src\\classes\\Mockable_Utilities.cls"
+			],
+			[
+				"rmsreplacelicencehandler",
+				"src\\classes\\RMSReplaceLicenceHandler.cls"
+			],
+			[
+				"rmswrapperctrl",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"rmsreplaceli",
+				"src\\classes\\RMSReplaceLicenceHandlerTest.cls"
+			],
+			[
+				"proper",
+				"build.properties"
+			],
+			[
+				"build",
+				"build.xml"
+			],
+			[
+				"rmsreplace",
+				"src\\classes\\RMSReplaceLicenceHandler.cls"
+			],
+			[
+				"rmsgl",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"setup",
+				"src\\classes\\SetupUtil.cls"
+			],
+			[
+				"rmsut",
+				"src\\classes\\rmsUtil.cls"
+			],
+			[
+				"rmswrapper",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"rmsrepla",
+				"src\\classes\\RMSReplaceLicenceHandler.cls"
+			],
+			[
+				"rmswrappertestui",
+				"src\\classes\\RMSWrapperCtrlTestUtil.cls"
+			],
+			[
+				"buid",
+				"build.xml"
+			],
+			[
+				"mocka",
+				"src\\classes\\Mockable_Utilities_502.cls"
+			],
+			[
+				"rmsesbdto",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"rmsreplacehe",
+				"src\\classes\\RMSReplaceRegCertificateHandler.cls"
+			],
+			[
+				"rmspsppaymentservicev1",
+				"src\\classes\\rmsPSPPaymentServiceV1.cls"
+			],
+			[
+				"rmsreplacere",
+				"src\\classes\\RMSReplaceRegCertificateHandler.cls"
+			],
+			[
+				"bui",
+				"build.xml"
+			],
+			[
+				"test_rmsreplace",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"properties",
+				"build.properties"
+			],
+			[
+				"bamboo",
+				"build_bamboo.properties"
+			],
+			[
+				"rmstransactionservice",
+				"src\\classes\\RMSTransactionService.cls"
+			],
+			[
+				"rmstransactionha",
+				"src\\classes\\rmsTransactionResHandlerTest.cls"
+			],
+			[
+				"rmscommonwrapper",
+				"src\\classes\\rmsCommonWrapper.cls"
+			],
+			[
+				"rmstransactionreshandler",
+				"src\\classes\\rmsTransactionResHandler.cls"
+			],
+			[
+				"rmsemailserv",
+				"src\\classes\\rmsEmailServ.cls"
+			],
+			[
+				"test_mrsr",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"prope",
+				"build.properties"
+			],
+			[
+				"rmsgloba",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"rmstransactioninfobase",
+				"src\\classes\\rmsTransactionInfoBase.cls"
+			],
+			[
+				"rmsreplaceregocerttransactioninfo",
+				"src\\classes\\rmsReplaceRegoCertTransactionInfo.cls"
+			],
+			[
+				"rmswrap",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"rmsesbrego",
+				"src\\classes\\rmsEsbRegoServ.cls"
+			],
+			[
+				"rmsglo",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"rmsesbdt",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"replacere",
+				"src\\classes\\RMSReplaceRegCertificateHandler.cls"
+			],
+			[
+				"rmsesb",
+				"deployment\\src\\classes\\rmsEsbErrorDetails.cls"
+			],
+			[
+				"rmsglobal",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"rmsesberrordetails",
+				"src\\classes\\rmsEsbErrorDetails.cls"
+			],
+			[
+				"rmsedbto",
+				"src\\classes\\RMSEsbDto.cls"
+			],
+			[
+				"mockable_utilities_502",
+				"src\\classes\\Mockable_Utilities_502.cls"
+			],
+			[
+				"rmsreplaceregcerttrans",
+				"src\\classes\\rmsReplaceRegoCertTransactionInfo.cls"
+			],
+			[
+				"rmsreceiptdatadetailsctrlv1",
+				"src\\classes\\rmsReceiptDataDetailsCtrlV1.cls"
+			],
+			[
+				"test_rmsre",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"rmswra",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"test_rmsreplaceregcertificate",
+				"src\\classes\\Test_RMSReplaceRegCertificate.cls"
+			],
+			[
+				"rmstransactionreqhandler",
+				"src\\classes\\rmsTransactionReqHandler.cls"
+			],
+			[
+				"rmssessionlogsvc",
+				"src\\classes\\rmsSessionLogSvc.cls"
+			],
+			[
+				"rmstransactionhelper",
+				"src\\classes\\RMSTransactionHelper.cls"
+			],
+			[
+				"rmsfulfillmentrequestgenerator",
+				"src\\classes\\rmsFulfillmentRequestGenerator.cls"
+			],
+			[
+				"rmsuti",
+				"src\\classes\\rmsUtil.cls"
+			],
+			[
+				"rmsfreeregocheckhandler",
+				"src\\classes\\RMSFreeRegoCheckHandler.cls"
+			],
+			[
+				"rmstestutil",
+				"src\\classes\\rmsTestUtil.cls"
+			],
+			[
+				"rmsesbregoserv",
+				"src\\classes\\rmsEsbRegoServ.cls"
+			],
+			[
+				"rmssettings__c",
+				"src\\objects\\RMSSettings__c.object"
+			],
+			[
+				"product",
+				"src\\objects\\Product2.object"
+			],
+			[
+				"agency_transaction__c",
+				"src\\objects\\Agency_Transaction__c.object"
+			],
+			[
+				"rmswrapperctrl.",
+				"src\\classes\\RMSWrapperCtrl.cls-meta.xml"
+			],
+			[
+				"rmsremotertester",
+				"src\\pages\\rmsRemoterTester.page"
+			],
+			[
+				"agency_activity_notification.email",
+				"src\\email\\My_Account\\R2_Agency_Activity_Notification.email"
+			],
+			[
+				"mautil",
+				"src\\classes\\maUtil.cls"
+			],
+			[
+				"customercommunityloginuser.profile",
+				"src\\profiles\\Customer Community Login User.profile"
+			],
+			[
+				"ocdrcheckeligibilityhandler",
+				"src\\classes\\OCDRCheckEligibilityHandler.cls"
+			],
+			[
+				"testfreere",
+				"src\\classes\\Test_RMSFreeRegoCheckHandler.cls"
+			],
+			[
+				"rmssessionlog",
+				"src\\classes\\rmsSessionLog.cls"
+			],
+			[
+				"rmssessionlogdmn",
+				"src\\classes\\rmsSessionLogDmn.cls"
+			],
+			[
+				"requesthelper",
+				"src\\classes\\RequestHelper.cls"
+			],
+			[
+				"pspcancelpage",
+				"src\\pages\\pspCancelPage.page"
+			],
+			[
+				"pspreceiptpage",
+				"src\\pages\\pspReceiptPage.page"
+			],
+			[
+				"ocdr",
+				"src\\classes\\OCDRCheckEligibilityHandler.cls"
+			],
+			[
+				"rmsg",
+				"src\\classes\\rmsGlobal.cls"
+			],
+			[
+				"rmswsgettransactiondetails",
+				"src\\classes\\rmsWSGetTransactionDetails.cls"
+			],
+			[
+				"ocdrresponse",
+				"src\\reportTypes\\Participating_Businesses_and_Renewal_Responses.reportType"
+			],
+			[
+				"freerego",
+				"src\\classes\\RMSFreeRegoCheckHandler.cls"
+			],
+			[
+				"snswcust",
+				"src\\profiles\\SNSW Customer Community Login.profile"
+			],
+			[
+				"myservicenswaccountprofile.profile",
+				"src\\profiles\\My Service NSW Account Profile.profile"
+			],
+			[
+				"rmspspservicectrl",
+				"src\\classes\\rmsPSPServiceCtrl.cls"
+			],
+			[
+				"rmsrenewregotransactioninfo",
+				"src\\classes\\rmsRenewRegoTransactionInfo.cls"
+			],
+			[
+				"rmstransferregotransactioninfo",
+				"src\\classes\\rmsTransferRegoTransactionInfo.cls"
+			],
+			[
+				"rmsrenewlicencetransactioninfo",
+				"src\\classes\\rmsRenewLicenceTransactionInfo.cls"
+			],
+			[
+				"remoteactionresponse",
+				"src\\classes\\RemoteActionResponse.cls"
+			],
+			[
+				"esberrordetails",
+				"src\\classes\\ESBErrorDetails.cls"
+			],
+			[
+				"rmstransactionctrl",
+				"src\\classes\\rmsTransactionCtrl.cls"
+			],
+			[
+				"identifierservice",
+				"src\\classes\\IdentifierService.cls"
+			],
+			[
+				"madashboardctrl",
+				"src\\classes\\maDashboardCtrl.cls"
+			],
+			[
+				"r2_agency_activity_notification",
+				"src\\email\\My_Account\\R2_Agency_Activity_Notification.email"
+			],
+			[
+				"rmsjwtutility",
+				"src\\classes\\rmsJWTUtility.cls"
+			],
+			[
+				"userservicehelper",
+				"src\\classes\\UserServiceHelper.cls"
+			],
+			[
+				"userser",
+				"src\\classes\\UserService.cls"
+			],
+			[
+				"receiptdataprovidersrv",
+				"src\\classes\\receiptDataProviderSrv.cls"
+			],
+			[
+				"receiptblockproviderctrl",
+				"src\\classes\\receiptBlockProviderCtrl.cls"
+			],
+			[
+				"receiptdatablock",
+				"src\\pages\\receiptDataBlock.page"
+			],
+			[
+				"setuputi",
+				"src\\classes\\SetupUtil.cls"
+			],
+			[
+				"rmspsppaymentapiwrapperv1",
+				"src\\classes\\rmsPspPaymentApiWrapperV1.cls"
+			],
+			[
+				"receipt",
+				"src\\classes\\ccReceiptCtl.cls"
+			],
+			[
+				"snippetscontroller",
+				"src\\classes\\snippetsController.cls"
+			],
+			[
+				"rmsesbre",
+				"src\\classes\\rmsEsbRegoServ.cls"
+			],
+			[
+				"rmswrapp",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			],
+			[
+				"handler",
+				"src\\classes\\RMSFreeRegoCheckHandler.cls"
+			],
+			[
+				"handlertest",
+				"src\\classes\\rmsRenewRegoResHandlerTest.cls"
+			],
+			[
+				"rmswrapperctrltest",
+				"src\\classes\\RMSWrapperCtrlTestUtil.cls"
+			],
+			[
+				"rmsex",
+				"src\\classes\\rmsException.cls"
+			],
+			[
+				"wrapper",
+				"src\\classes\\RMSWrapperCtrl.cls"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 527.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 397.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
