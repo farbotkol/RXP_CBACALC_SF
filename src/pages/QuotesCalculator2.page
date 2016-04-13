@@ -47,7 +47,7 @@
             e.value = scope.xmlOut.replace('<?xml version="1.0" encoding="UTF-8" ?>' , '');
         }
 
-        function getRemoteStuff()
+        function LoadXMLDataFromRecord()
         {
             Visualforce.remoting.Manager.invokeAction(
                 '{!$RemoteAction.QuotesControllerExtension.getXMLData}',
@@ -105,6 +105,30 @@
                     scope.DelayedPayment = Number(formData.DelayedPayment);
 
 
+                    var factsData =  jsonData.CBACalculatorTools.CBACalculatorFacts;
+
+   
+                                      //"LCTLimit": $scope.LCTLimit(),
+                    scope.LCTLimitFuelEfficient = Number(factsData.LCTLimitFuelEfficient); // LCTLimitFuelEfficient__c
+                    scope.GSTPercentRate  = Number(factsData.GSTPercentRate); //GSTPercentRate__c
+                    scope.MortgageDutyBaseNSW = Number(factsData.MortgageDutyBaseNSW); // MortgageDutyBaseNSW__c
+                    scope.MortgageDutyLimitNSW = Number(factsData.MortgageDutyLimitNSW);// MortgageDutyLimitNSW__c
+                    scope.MortgageDutyRateNSW = Number(factsData.MortgageDutyRateNSW);// MortgageDutyRateSA__c
+                    scope.MortgageDutyCeilFactorNSW = Number(factsData.MortgageDutyCeilFactorNSW);// MortgageDutyCeilFactorNSW__c
+                    scope.MortgageDutyBaseSA = Number(factsData.MortgageDutyBaseSA);// MortgageDutyBaseSA__c
+                    scope.MortgageDutyLimitSA = Number(factsData.MortgageDutyLimitSA);// MortgageDutyLimitSA__c
+                    scope.MortgageDutyRateSA = Number(factsData.MortgageDutyRateSA);//  MortgageDutyRateSA__c
+                    scope.MortgageDutyCeilFactorSA = Number(factsData.MortgageDutyCeilFactorSA);// MortgageDutyCeilFactorSA__c
+
+                    if (LCTRate)
+                    scope.LCTRate = Number(LCTRate); // LCTRate__c
+                    scope.LCTLuxuryThreshold = Number(LCTLuxuryThreshold); //LCTLuxuryThreshold__c (New)
+                    scope.LCTCarLimit = Number(LCTCarLimit);//LCTLimitLuxury__c
+
+
+        
+
+
                     //console.log(xmlData);
                     console.log(jsonData);
                     scope.ComputeFromAmountFinanced();
@@ -116,7 +140,7 @@
 
         }
 
-        getRemoteStuff();
+        LoadXMLDataFromRecord();
 
         /*var jsReady = false;
      
