@@ -1,7 +1,6 @@
 <apex:component>
-    <div ng-controller="RealEstateController" ng-app="RealEstateApp">
-
-        <div style='float: left' class='calctype'>
+    <div id='CBA_CALC' ng-controller="RealEstateController" ng-app="RealEstateApp">
+    <div style='float: left' class='calctype'>
             <fieldset>
                 <div><label for='CalcType'>Calculation Type</label>
                     <select id='CalcType'  name="singleSelect" ng-model="CalcType"
@@ -440,7 +439,7 @@
                 <label for='TermInMonthsInstallment'>Term (Months)</label>
                 <input disabled="disabled"
                 id='TermInMonthsInstallment' 
-                value='{{NumberInstallmentsFromSchedule|number}}' 
+                value='{{TermInMonthsInstallment()|number}}' 
                 />
             </div>
 
@@ -515,7 +514,7 @@
             </div>
 
             <div ng-show='showResidualValueIncGST'>
-                <label for='ResidualValueIncGST) '>Residual Value (Inc. GST) </label>
+                <label for='ResidualValueIncGST '>Residual Value (Inc. GST) </label>
                 <input disabled="disabled"
                 id='ResidualValueIncGST' 
                 value='{{BalloonAmount()}}'
@@ -543,7 +542,7 @@
                 <label for='TermInMonthsInstallment'>Term (Months)</label>
                 <input disabled="disabled"
                 id='TermInMonthsInstallment' 
-                value='{{NumberInstallmentsFromSchedule|number}}' 
+                value='{{TermInMonthsInstallment()|number}}' 
                 />
             </div>
                 
@@ -731,6 +730,7 @@
     </fieldset>
 
     </div>
+        
  
      </div>
 </apex:component>

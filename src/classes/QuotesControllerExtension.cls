@@ -72,4 +72,11 @@ public with sharing class QuotesControllerExtension{
         
         return errorMessage;
     }
+
+   @RemoteAction  
+   public static string getXMLData(string Id )
+   {  
+        Quote__c quote =  [SELECT Id,XML_Calculation_Data__c FROM Quote__c where Id = :Id ];  
+        return quote.XML_Calculation_Data__c;
+   }
 }

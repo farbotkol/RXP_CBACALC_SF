@@ -5,6 +5,7 @@
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'CalcJS.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'LoanProjection.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'LoanProjections.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'ObjTree.js')}"/>
     <apex:stylesheet value="{!URLFOR($Resource.RXP_CBACALC, 'CalcCss.css')}"/>
 
     <apex:form >
@@ -12,13 +13,13 @@
         <apex:pageBlock id="quoteEdit" mode="Edit" >
             <apex:pageMessages />
             <apex:pageBlockButtons >
-                <apex:commandButton value="Save" onclick="BeforeSave()" action="{!customsave}"/>
+                <apex:commandButton value="Save" onclick="updateHiddenValue('{!$Component.detail.data}')" action="{!customsave}"/>
                 <apex:commandButton value="Cancel" action="{!cancel}"/>
                 <apex:commandButton value="Print Schedule" onclick="PrintSchedule()"/>
             </apex:pageBlockButtons>
             <apex:pageBlockSection id="detail" title="Quote" columns="2" >
                 <apex:inputField id="clientname" value="{!Quote__c.Client_Name__c}" />
-                <apex:inputHidden id="data" value="{!Quote__c.XML_Calculation_Data__c}" /> 
+                <apex:inputField id="data" value="{!Quote__c.XML_Calculation_Data__c}" /> 
                 <apex:inputField value="{!Quote__c.Client_Phone__c}" />
                 <apex:inputField id="startdate" value="{!Quote__c.Quote_Start_Date__c}" />
                 <apex:inputField value="{!Quote__c.Client_Fax_Email__c}" />
@@ -33,9 +34,118 @@
                 <apex:inputField value="{!Quote__c.Addional_Disclosure__c}" style="width:600px"  /> 
             </apex:pageBlockSection>
             <apex:pageBlockSection id="rxpCalc" title="Financial Calculators">
-                <c:QuoteComponent/>
+                <c:QuoteComponent />
             </apex:pageBlockSection>
         </apex:pageBlock>
+
+        <script language="JavaScript" type="text/javascript">
+        function updateHiddenValue(eId){
+            //alert('updateHiddenValue called');
+            var scope = angular.element(document.querySelector('#CBA_CALC')).scope();
+
+            var e = document.getElementById(eId);
+            e.value = scope.xmlOut.replace('<?xml version="1.0" encoding="UTF-8" ?>' , '');
+        }
+
+        function getRemoteStuff()
+        {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.QuotesControllerExtension.getXMLData}',
+                'a0N8E000001SyW7',
+                function(result, event) {
+                    var xotree = new XML.ObjTree();
+                    var scope = angular.element(document.querySelector('#CBA_CALC')).scope();
+                    //var xmlData = unescape(result)
+                    
+                    var xmlData =  angular.element('<textarea />').html(result).text();
+
+
+                    var jsonData = xotree.parseXML( xmlData );
+
+                    var formData =  jsonData.CBACalculatorTools.CBACalculatorForm;
+
+                    scope.CalcType = Number(formData.CalcType);
+                    scope.InAdvanced = formData.InAdvanced;
+                    scope.Frequency = formData.Frequency;
+                    scope.State = formData.State;
+
+                    var parts = formData.DDate.split("/");
+                    var dt = new Date(parseInt(parts[2], 10),
+                                      parseInt(parts[1], 10) - 1,
+                                      parseInt(parts[0], 10));
+
+
+                    if ( jsonData.CBACalculatorTools.CBACalculatorSchedule.Seasonal != null){
+                        scope.IsSeasonal = true;
+                        var seasonalStrArray = jsonData.CBACalculatorTools.CBACalculatorSchedule.Seasonal.split(',')
+                        var cnt = 0;
+                        while (cnt < seasonalStrArray.length){
+                            scope.Seasonal[cnt] = JSON.parse(seasonalStrArray[cnt]);
+                            cnt++;
+                        }
+
+                    }
+                    else{
+                        scope.IsSeasonal = false;
+                    }
+
+                    scope.DDateText = dt.yyyymmdd();//formData.DDate;
+                    scope.AssetType = formData.AssetType;
+                    scope.EquipmentCost = Number(formData.EquipmentCost);
+                    scope.TradeIn = Number(formData.TradeIn);
+                    scope.MVRegoCost = Number(formData.MVRegoCost);
+                    scope.Options = Number(formData.Options);
+                    scope.SupplierDelivery = Number(formData.SupplierDelivery);
+                    scope.SupplierDiscount = Number(formData.SupplierDiscount);
+                    scope.FeesAndChargesFinanced = Number(formData.FeesAndChargesFinanced);
+                    scope.LessorRate = Number(formData.LessorRate);
+                    scope.TermInMonths = Number(formData.TermInMonths);
+                    scope.BrokageAmount = Number(formData.BrokageAmount);
+                    scope.ResidualAmount = Number(formData.ResidualAmount);
+                    scope.DelayedPayment = Number(formData.DelayedPayment);
+
+
+                    //console.log(xmlData);
+                    console.log(jsonData);
+                    scope.ComputeFromAmountFinanced();
+                    scope.TypeChanged();
+                    scope.$apply();
+
+                }
+            );
+
+        }
+
+        getRemoteStuff();
+
+        /*var jsReady = false;
+     
+        function isReady() {
+            return jsReady;
+        }
+     
+        function pageInit() {
+            jsReady = true;
+            //document.getElementById("{!$Component.quoteEdit.detail.data}").value = "JavaScript is ready.\n";
+        }
+
+        function BeforeSave()
+        {
+            pageInit();
+            var flashObj = document["{!$Component.quoteEdit.flashSection.flashobj.flash}"];
+
+            flashObj.SaveMethod();
+        }
+
+        function PrintSchedule()
+        {
+            var flashObj =document["{!$Component.quoteEdit.flashSection.flashobj.flash}"];
+            var headetext="Client Name:"+document.getElementById("{!$Component.quoteEdit.detail.clientname}").value + "\nItem Type:" + 
+            document.getElementById("{!$Component.quoteEdit.detail.itemtype}").value+"\nStart date:" + 
+            document.getElementById("{!$Component.quoteEdit.detail.startdate}").value;
+            flashObj.PrintSchedule(headetext);
+        }*/
+    </script>
     </apex:form>
 
 </apex:page>
