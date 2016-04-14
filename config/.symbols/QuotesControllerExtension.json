@@ -285,6 +285,22 @@
             }, 
             "returnType": "String", 
             "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "getNothing", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 86
+            }, 
+            "returnType": "String", 
+            "type": null
         }
     ]
 }

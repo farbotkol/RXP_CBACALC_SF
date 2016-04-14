@@ -81,4 +81,10 @@ public with sharing class QuotesControllerExtension{
         Quote__c quote =  [SELECT Id,XML_Calculation_Data__c FROM Quote__c where Id = :Id ];  
         return quote.XML_Calculation_Data__c;
    }
+
+   @RemoteAction  
+   public static string getNothing( )
+   {  
+        return '';
+   }
 }
