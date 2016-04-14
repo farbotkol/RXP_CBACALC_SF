@@ -51,7 +51,7 @@
         {
             Visualforce.remoting.Manager.invokeAction(
                 '{!$RemoteAction.QuotesControllerExtension.getXMLData}',
-                'a0N8E000001SyW7',
+                 '{!currentRecordId}',
                 function(result, event) {
                     var xotree = new XML.ObjTree();
                     var scope = angular.element(document.querySelector('#CBA_CALC')).scope();
@@ -120,19 +120,21 @@
                     scope.MortgageDutyRateSA = Number(factsData.MortgageDutyRateSA);//  MortgageDutyRateSA__c
                     scope.MortgageDutyCeilFactorSA = Number(factsData.MortgageDutyCeilFactorSA);// MortgageDutyCeilFactorSA__c
 
-                    if (LCTRate)
-                    scope.LCTRate = Number(LCTRate); // LCTRate__c
-                    scope.LCTLuxuryThreshold = Number(LCTLuxuryThreshold); //LCTLuxuryThreshold__c (New)
-                    scope.LCTCarLimit = Number(LCTCarLimit);//LCTLimitLuxury__c
-
-
-        
+                    if (factsData.LCTRate)
+                        scope.LCTRate = Number(factsData.LCTRate); // LCTRate__c
+                    if (factsData.LCTLuxuryThreshold)
+                        scope.LCTLuxuryThreshold = Number(factsData.LCTLuxuryThreshold); //LCTLuxuryThreshold__c (New)
+                    if (factsData.LCTCarLimit)
+                        scope.LCTCarLimit = Number(factsData.LCTCarLimit);//LCTLimitLuxury__c
 
 
                     //console.log(xmlData);
                     console.log(jsonData);
-                    scope.ComputeFromAmountFinanced();
+                    
                     scope.TypeChanged();
+
+                    scope.setAddPaymentArray(jsonData.CBACalculatorTools.CBACalculatorSchedule.CBACalculatorAddPayments);
+                    scope.ComputeFromAmountFinanced();
                     scope.$apply();
 
                 }

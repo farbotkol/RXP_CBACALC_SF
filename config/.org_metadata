@@ -801,6 +801,18 @@
         "children": [
             {
                 "leaf": true, 
+                "title": "QuoteComponent", 
+                "checked": false, 
+                "id": "ApexComponent.QuoteComponent", 
+                "text": "QuoteComponent", 
+                "level": 2, 
+                "isFolder": false, 
+                "children": [], 
+                "select": false, 
+                "cls": ""
+            }, 
+            {
+                "leaf": true, 
                 "title": "SiteFooter", 
                 "checked": false, 
                 "id": "ApexComponent.SiteFooter", 
@@ -1081,6 +1093,18 @@
                 "checked": false, 
                 "id": "ApexPage.QuotesCalculator", 
                 "text": "QuotesCalculator", 
+                "level": 2, 
+                "isFolder": false, 
+                "children": [], 
+                "select": false, 
+                "cls": ""
+            }, 
+            {
+                "leaf": true, 
+                "title": "QuotesCalculator2", 
+                "checked": false, 
+                "id": "ApexPage.QuotesCalculator2", 
+                "text": "QuotesCalculator2", 
                 "level": 2, 
                 "isFolder": false, 
                 "children": [], 
@@ -17099,6 +17123,16 @@
                                 "title": "LCTLimitLuxury__c", 
                                 "isFolder": false, 
                                 "id": "CustomObject.CalculatorFigures__c.fields.LCTLimitLuxury__c", 
+                                "select": false
+                            }, 
+                            {
+                                "leaf": true, 
+                                "checked": false, 
+                                "level": 4, 
+                                "text": "LCTLuxuryThreshold__c", 
+                                "title": "LCTLuxuryThreshold__c", 
+                                "isFolder": false, 
+                                "id": "CustomObject.CalculatorFigures__c.fields.LCTLuxuryThreshold__c", 
                                 "select": false
                             }, 
                             {
@@ -34793,6 +34827,16 @@
                                 "title": "Create_Quote", 
                                 "isFolder": false, 
                                 "id": "CustomObject.Quote__c.webLinks.Create_Quote", 
+                                "select": false
+                            }, 
+                            {
+                                "leaf": true, 
+                                "checked": false, 
+                                "level": 4, 
+                                "text": "Edit_New", 
+                                "title": "Edit_New", 
+                                "isFolder": false, 
+                                "id": "CustomObject.Quote__c.webLinks.Edit_New", 
                                 "select": false
                             }
                         ], 

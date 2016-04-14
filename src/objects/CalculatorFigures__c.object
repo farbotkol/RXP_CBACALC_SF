@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>GSTPercentRate__c</fullName>
+        <externalId>false</externalId>
+        <label>GST Percent Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>LCTLimitFuelEfficient__c</fullName>
+        <externalId>false</externalId>
+        <label>LCT Limit Fuel Efficient Car</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LCTLimitLuxury__c</fullName>
+        <externalId>false</externalId>
+        <label>LCT Limit Luxury Car</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LCTLuxuryThreshold__c</fullName>
+        <defaultValue>61884</defaultValue>
+        <externalId>false</externalId>
+        <label>LCT Luxury Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LCTRate__c</fullName>
+        <externalId>false</externalId>
+        <label>LCT Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>MortgageDutyBaseNSW__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Duty Base (NSW)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MortgageDutyBaseSA__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Duty Base (SA)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MortgageDutyCeilFactorNSW__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Duty Ceil Factor NSW</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MortgageDutyCeilFactorSA__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Duty Ceil Factor SA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MortgageDutyLimitNSW__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Formula: IF(AmountFinanced&amp;lt;=MorgageDutyLimit, MorgageDutyBase, (CEILING(AmountFinanced,1000)-MorgageDutyLimit)/100*MorgageDutyRate+MorgageDutyBase)</inlineHelpText>
+        <label>Mortgage Duty Limit (NSW)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MortgageDutyLimitSA__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Formula: IF(AmountFinanced&amp;lt;=MorgageDutyLimit, MorgageDutyBase, (CEILING(AmountFinanced,1000)-MorgageDutyLimit)/100*MorgageDutyRate+MorgageDutyBase)</inlineHelpText>
+        <label>Mortgage Duty Limit (SA)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MortgageDutyRateNSW__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Formula: IF(AmountFinanced&amp;lt;=MorgageDutyLimit, MorgageDutyBase, (CEILING(AmountFinanced,1000)-MorgageDutyLimit)/100*MorgageDutyRate+MorgageDutyBase)</inlineHelpText>
+        <label>Mortgage Duty Rate NSW</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>MortgageDutyRateSA__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Formula: IF(AmountFinanced&amp;lt;=MorgageDutyLimit, MorgageDutyBase, (CEILING(AmountFinanced,1000)-MorgageDutyLimit)/100*MorgageDutyRate+MorgageDutyBase)</inlineHelpText>
+        <label>Mortgage Duty Rate (SA)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Expiry_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Days of Expiry</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Calculator Facts Figure</label>
+</CustomObject>

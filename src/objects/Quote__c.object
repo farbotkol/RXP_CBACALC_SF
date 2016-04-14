@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>QuotesCalculator</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>QuotesCalculator</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Addional_Disclosure__c</fullName>
+        <externalId>false</externalId>
+        <label>Addional Disclosure</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Amount_Financed__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount Financed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Balloon_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Residual / Balloon Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Balloon_Amount_incl_GST__c</fullName>
+        <externalId>false</externalId>
+        <label>Residual / Balloon Amount (incl GST)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Balloon__c</fullName>
+        <externalId>false</externalId>
+        <label>Residual / Balloon %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Brokerage_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Brokerage Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Brokerage_Amount_inc_GST__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_Amount__c * (1+$Setup.CalculatorFigures__c.GSTPercentRate__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage Amount (inc GST)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Brokerage_Percent_inc_GST__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Amount_Financed__c&gt;0, Brokerage_Amount_inc_GST__c/ Amount_Financed__c , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage Percent inc GST</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Brokerage__c</fullName>
+        <externalId>false</externalId>
+        <label>Brokerage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Client_Fax_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Client Fax / Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Client_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Client Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Client Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cost_incl_GST__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost (incl. GST)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DaysExpiryText__c</fullName>
+        <externalId>false</externalId>
+        <formula>case (Days_to_Expire__c,0,&apos;zero&apos;,10,&apos;ten&apos;,11,&apos;eleven&apos;,12,&apos;twelve&apos;,13,&apos;thirteen&apos;,14,&apos;fourteen&apos;,15,&apos;fifteen&apos;,
+     16,&apos;sixteen&apos;,17,&apos;seventeen&apos;,18,&apos;eighteen&apos;,19,&apos;nineteen&apos;, 
+     
+     case (FLOOR(Days_to_Expire__c/10),1,&apos;ten &apos;,2,&apos;twenty &apos;,3,&apos;thirty &apos;,4,&apos;forty &apos;,
+          5,&apos;fifty &apos;,6,&apos;sixty &apos;,7,&apos;seventy &apos;, 8,&apos;eighty &apos;,9,&apos;ninety &apos;,&apos;&apos;) +
+     case(MOD(Days_to_Expire__c,10),1,&apos;one &apos;,2,&apos;two &apos;,3,&apos;three &apos;,4,&apos;four &apos;,
+          5,&apos;five &apos;,6,&apos;six &apos;,7,&apos;seven &apos;, 8,&apos;eight &apos;,9,&apos;nine &apos;,&apos;&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days of Expiry Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_to_Expire__c</fullName>
+        <externalId>false</externalId>
+        <formula>((Quote_Start_Date__c +  Expiry_Days__c ) - Datevalue(NOW()))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days to Expire</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Documentation_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Documentation Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Quote_Start_Date__c +  Days_to_Expire__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expiry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expiry_Days_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>case (Expiry_Days__c,0,&apos;zero&apos;,10,&apos;ten&apos;,11,&apos;eleven&apos;,12,&apos;twelve&apos;,13,&apos;thirteen&apos;,14,&apos;fourteen&apos;,15,&apos;fifteen&apos;,
+16,&apos;sixteen&apos;,17,&apos;seventeen&apos;,18,&apos;eighteen&apos;,19,&apos;nineteen&apos;,
+
+case (FLOOR(Expiry_Days__c/10),1,&apos;ten &apos;,2,&apos;twenty &apos;,3,&apos;thirty &apos;,4,&apos;forty &apos;,
+5,&apos;fifty &apos;,6,&apos;sixty &apos;,7,&apos;seventy &apos;, 8,&apos;eighty &apos;,9,&apos;ninety &apos;,&apos;&apos;) +
+case(MOD(Expiry_Days__c,10),1,&apos;one &apos;,2,&apos;two &apos;,3,&apos;three &apos;,4,&apos;four &apos;,
+5,&apos;five &apos;,6,&apos;six &apos;,7,&apos;seven &apos;, 8,&apos;eight &apos;,9,&apos;nine &apos;,&apos;&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expiry Days Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiry_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Setup.CalculatorFigures__c.Quote_Expiry_Days__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expiry Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Facility_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Facility Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Equipment Loan</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hire Purchase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Novated Lease</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance Lease</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Fees_and_Other_Amounts_Financed__c</fullName>
+        <externalId>false</externalId>
+        <label>Fees and Other Amounts Financed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GSTOnResidual__c</fullName>
+        <externalId>false</externalId>
+        <label>GST On Residual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GST_on_Rental__c</fullName>
+        <externalId>false</externalId>
+        <label>GST on Rental</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GST_on_the_Contract__c</fullName>
+        <externalId>false</externalId>
+        <label>GST on the Contract</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Input_Tax_Credit_on_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>Input Tax Credit on Purchase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Installment_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Installment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Installment_Amount_ex_GST__c</fullName>
+        <externalId>false</externalId>
+        <label>Installment Amount (ex GST)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Item_Classification__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Classification</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Type</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Less_Deposit_Trade_in__c</fullName>
+        <externalId>false</externalId>
+        <label>Less Deposit / Trade-in</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Lessee_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Lessee Rate</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Lessor_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Lessor Rate</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>LogoURL__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( CreatedBy.UserRole.Name, &quot;FleetPlus&quot;), &quot;https://c.cs4.content.force.com/servlet/servlet.FileDownload?file=01520000000vVUd&quot;, &quot;https://c.cs4.content.force.com/servlet/servlet.FileDownload?file=01520000000Zggx&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LogoURL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Luxury_Car_Tax__c</fullName>
+        <externalId>false</externalId>
+        <label>Luxury Car Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mortgage_Duty__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Duty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Installments__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Installments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Option__c</fullName>
+        <externalId>false</externalId>
+        <label>Options (incl GST)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Other_Credit_Charges_on_Rental_Payments__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Credit Charges on Rental Payments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Security_Registration_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Registration Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stamp_Duty_on_Rental__c</fullName>
+        <externalId>false</externalId>
+        <label>Stamp Duty on Rental</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ACT</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NSW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TAS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Progressed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Supplier_Delivery_Extras__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplier Delivery / Extras</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Supplier_Discount__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplier Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Template_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Facility_Type__c, &quot;Equipment Loan&quot;), &quot;a0FD0000006M8ub&quot;, IF(ISPICKVAL(Facility_Type__c, &quot;Finance Lease&quot;), &quot;a0FD0000006M8ug&quot;, IF(ISPICKVAL(Facility_Type__c, &quot;Hire Purchase&quot;), &quot;a0FD0000006M8uq&quot;, &quot;a0FD0000006M8ug&quot;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Template ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Amount_Interest_Payable__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Amount Interest Payable</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Amount_of_Repayments__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Amount of Repayments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_Registration__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Vehicle Registration (includes Stamp Duty &amp; CTP)</inlineHelpText>
+        <label>Vehicle Registration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Short_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( CreatedBy.UserRole.Name, &quot;FleetPlus&quot;), &quot;FleetPlus&quot;, &quot;CBA&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vendor Short Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( CreatedBy.UserRole.Name, &quot;FleetPlus&quot;), &quot;FleetPlus Pty Ltd ABN 59 099 217 320 as Agent for Commonwealth Bank of Australia ABN 48 123 123 124&quot;, &quot;Commonwealth Bank of Australia ABN 48 123 123 124&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vendor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XML_Calculation_Data__c</fullName>
+        <description>This is a hidden text to store data required to load and store by the calculators.</description>
+        <externalId>false</externalId>
+        <label>XML Calculation Data</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Quote</label>
+    <listViews>
+        <fullName>All_Quotes</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Amount_Financed__c</columns>
+        <columns>Facility_Type__c</columns>
+        <columns>Item_Type__c</columns>
+        <columns>Client_Phone__c</columns>
+        <columns>Client_Fax_Email__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Quotes</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Quotes</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Amount_Financed__c</columns>
+        <columns>Facility_Type__c</columns>
+        <columns>Item_Type__c</columns>
+        <columns>Client_Phone__c</columns>
+        <columns>Client_Fax_Email__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Quotes</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Q-{00000}</displayFormat>
+        <label>Quote ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Quotes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Client_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Client_Phone__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Facility_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Amount_Financed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Days_to_Expire__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Client_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Client_Phone__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Facility_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Days_to_Expire__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Amount_Financed__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Facility_Type__c</searchFilterFields>
+        <searchFilterFields>Amount_Financed__c</searchFilterFields>
+        <searchFilterFields>Brokerage_Amount__c</searchFilterFields>
+        <searchFilterFields>Client_Name__c</searchFilterFields>
+        <searchFilterFields>Client_Fax_Email__c</searchFilterFields>
+        <searchFilterFields>Client_Phone__c</searchFilterFields>
+        <searchFilterFields>LAST_UPDATE</searchFilterFields>
+        <searchResultsAdditionalFields>Client_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Client_Phone__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Facility_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount_Financed__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Days_to_Expire__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <fullName>Create_Application</fullName>
+        <availability>online</availability>
+        <description>This progresses a quote to an application</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Application</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ApplicationRecordTypesPage?quote_id={!Quote__c.Id}&amp;user_id={!$User.Id}&amp;is_quote_generated=true</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Quote</fullName>
+        <availability>online</availability>
+        <description>Creates a printable document of a quote</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>160</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Create Quote Doc</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_80}
+&amp;id={!Quote__c.Id}
+&amp;TemplateId={!Quote__c.Template_ID__c}
+&amp;defaultPDF=1
+&amp;DS4=1
+&amp;DS7=3
+&amp;OFN={!Quote__c.Client_Name__c}
+&amp;lg4=0
+&amp;QueryId=a08D000000Q3qOB</url>
+        <width>320</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_New</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Edit New</masterLabel>
+        <openType>sidebar</openType>
+        <page>QuotesCalculator2</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

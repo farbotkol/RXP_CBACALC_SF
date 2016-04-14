@@ -1,0 +1,290 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "private", 
+                "final"
+            ], 
+            "name": "obj", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 4
+            }, 
+            "type": "Quote__c"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "debug", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 5
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "currentRecordId", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 6
+            }, 
+            "type": "String"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "QuotesControllerExtension", 
+            "parameters": [
+                {
+                    "type": "StandardController", 
+                    "name": "stdController"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 11
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "QuotesControllerExtension", 
+    "tableDeclaration": {
+        "type": "QuotesControllerExtension", 
+        "modifiers": [
+            "public", 
+            "with sharing"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "QuotesControllerExtension"
+    }, 
+    "key": "01pD00000006Hv1IAE", 
+    "variables": [
+        {
+            "type": "StandardController", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 67, 
+                "line": 11
+            }, 
+            "name": "stdController"
+        }, 
+        {
+            "type": "XMLToQuotes", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 25
+            }, 
+            "name": "converter"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 40, 
+                "line": 31
+            }, 
+            "name": "listSchedule"
+        }, 
+        {
+            "type": "Quote_Payment_Schedule__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 40, 
+                "line": 37
+            }, 
+            "name": "schedule"
+        }, 
+        {
+            "type": "PageReference", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 44
+            }, 
+            "name": "acctPage"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 29, 
+                "line": 56
+            }, 
+            "name": "text"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 41, 
+                "line": 61
+            }, 
+            "name": "errorMessage"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 63
+            }, 
+            "name": "valText"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 64
+            }, 
+            "name": "index"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 43, 
+                "line": 79
+            }, 
+            "name": "Id"
+        }, 
+        {
+            "type": "Quote__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 81
+            }, 
+            "name": "quote"
+        }
+    ], 
+    "id": "01pD00000006Hv1IAE", 
+    "methods": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getDebug", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 17
+            }, 
+            "returnType": "String", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "customsave", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 22
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "Log", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "text"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 56
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "PrettyMessage", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "errorMessage"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 61
+            }, 
+            "returnType": "String", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "getXMLData", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "Id"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 79
+            }, 
+            "returnType": "String", 
+            "type": null
+        }
+    ]
+}

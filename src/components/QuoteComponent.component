@@ -1,4 +1,4 @@
-<apex:component>
+<apex:component >
     <div id='CBA_CALC' ng-controller="RealEstateController" ng-app="RealEstateApp">
     <div style='float: left' class='calctype'>
             <fieldset>

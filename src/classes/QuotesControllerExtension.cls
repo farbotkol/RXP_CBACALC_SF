@@ -3,6 +3,7 @@ public with sharing class QuotesControllerExtension{
 /// This class is to manage the conversion between XML from flex to SF fields.
     private final Quote__c obj;
     private string debug;
+    public String currentRecordId {get;set;}
     // The extension constructor initializes the private member  
     // variable acct by using the getRecord method from the standard  
     // controller.  
@@ -10,6 +11,7 @@ public with sharing class QuotesControllerExtension{
     public QuotesControllerExtension(ApexPages.StandardController stdController) {
         debug = ApexPages.currentPage().getParameters().get('debug');
         this.obj= (Quote__c)stdController.getRecord();
+        currentRecordId  = ApexPages.CurrentPage().getparameters().get('id');
     }
     
     public string getDebug()
