@@ -1,4 +1,4 @@
-<apex:page standardController="Quote__c" extensions="QuotesControllerExtension" >
+<apex:page standardController="Quote__c" renderAs="pdf" extensions="QuotesControllerExtension" >
     
     
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'angular.min.js')}"/>
@@ -174,11 +174,6 @@
                     }
                 );
             }
-        }
-
-        function PrintSchedule()
-        {
-            window.print();
         }
 
         LoadXMLDataFromRecord();
