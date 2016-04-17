@@ -293,7 +293,7 @@
         <div><label for='BrokagePercent'>Brokerage %</label>
             <input 
             id='BrokagePercent' 
-            ng-model='BrokagePercent'  type='number'
+            ng-model='BrokagePercent'  type='number' step='0.01'
             ng-change='CalculateBrokageAmount()' percent='percent'
             />
         </div>
@@ -313,7 +313,7 @@
         <div><label for='BalloonPercent'>Balloon %</label>
             <input 
             id='BalloonPercent' 
-            ng-model='ResidualPercent' type='number'
+            ng-model='ResidualPercent' type='number' step='0.01'
             ng-change='CalculateResidualAmount()' percent='percent'
             />
         </div>
