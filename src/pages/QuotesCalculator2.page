@@ -180,44 +180,19 @@
         {
             
 
-            var scope = angular.element(document.querySelector('#CBA_CALC')).scope();
+            /*var scope = angular.element(document.querySelector('#CBA_CALC')).scope();
             scope.clientName = document.getElementById(clientNameId).value;
             scope.itemType = document.getElementById(itemTypeId).value;
             scope.startDate = document.getElementById(startDateId).value;
 
             scope.$apply();
-            window.print();
+            window.print();*/
+
+             window.open('{!urlfor($Page.QuotesCalculatorPrint)}?id={!currentRecordId}');
         }
 
         LoadXMLDataFromRecord();
 
-        /*var jsReady = false;
-     
-        function isReady() {
-            return jsReady;
-        }
-     
-        function pageInit() {
-            jsReady = true;
-            //document.getElementById("{!$Component.quoteEdit.detail.data}").value = "JavaScript is ready.\n";
-        }
-
-        function BeforeSave()
-        {
-            pageInit();
-            var flashObj = document["{!$Component.quoteEdit.flashSection.flashobj.flash}"];
-
-            flashObj.SaveMethod();
-        }
-
-        function PrintSchedule()
-        {
-            var flashObj =document["{!$Component.quoteEdit.flashSection.flashobj.flash}"];
-            var headetext="Client Name:"+document.getElementById("{!$Component.quoteEdit.detail.clientname}").value + "\nItem Type:" + 
-            document.getElementById("{!$Component.quoteEdit.detail.itemtype}").value+"\nStart date:" + 
-            document.getElementById("{!$Component.quoteEdit.detail.startdate}").value;
-            flashObj.PrintSchedule(headetext);
-        }*/
     </script>
     </apex:form>
 

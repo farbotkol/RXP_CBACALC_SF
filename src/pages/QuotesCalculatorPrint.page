@@ -1,4 +1,4 @@
-<apex:page standardController="Quote__c" renderAs="pdf" extensions="QuotesControllerExtension" >
+<apex:page standardController="Quote__c" extensions="QuotesControllerExtension" showHeader="false" sidebar="false" >
     
     
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'angular.min.js')}"/>
@@ -9,45 +9,37 @@
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'ng-currency.js')}"/>
 
     <apex:stylesheet value="{!URLFOR($Resource.RXP_CBACALC, 'CalcCss.css')}"/>
+    <apex:form >
 
-    <apex:form id="quoteform">
+     <div>
+        <label for='clientName'>Client Name</label>
+        <input disabled="disabled"
+        id='clientName' 
+        type='text'
+        value='{!Quote__c.Client_Name__c}' 
+        />
+    </div>
+    <div>
+        <label for='itemType'>Item Type</label>
+        <input disabled="disabled"
+        id='itemType' 
+        type='text'
+        value='{!Quote__c.Item_Type__c}' 
+        />
+    </div>
+    <div>
+        <label for='startDate'>Start Date</label>
+        <input disabled="disabled"
+        id='startDate' 
+        type='text'
+        value='{!Quote__c.Quote_Start_Date__c}' 
+        />
+    </div>
 
-        <apex:pageBlock id="quoteEdit" mode="Edit" >
-            <apex:pageMessages />
-            <apex:pageBlockButtons >
-                <apex:commandButton value="Save" onclick="updateHiddenValue('{!$Component.detail.data}')" action="{!customsave}"/>
-                <apex:commandButton value="Cancel" action="{!cancel}"/>
-                <apex:commandButton value="Print Schedule" onclick="PrintSchedule()"/>
-            </apex:pageBlockButtons>
-            <apex:pageBlockSection id="detail" title="Quote" columns="2" >
-                <apex:inputField id="clientname" value="{!Quote__c.Client_Name__c}" />
-                <apex:inputField id="data" value="{!Quote__c.XML_Calculation_Data__c}" /> 
-                <apex:inputField value="{!Quote__c.Client_Phone__c}" />
-                <apex:inputField id="startdate" value="{!Quote__c.Quote_Start_Date__c}" />
-                <apex:inputField value="{!Quote__c.Client_Fax_Email__c}" />
-                <apex:outputField value="{!Quote__c.Days_to_Expire__c}" />
-                <apex:inputField id="itemtype" value="{!Quote__c.Item_Type__c}" />
-
-                <apex:inputField value="{!Quote__c.Documentation_Fee__c}" />
-                <apex:inputField value="{!Quote__c.Status__c}" />
-                <apex:inputField value="{!Quote__c.Security_Registration_Fee__c}" /> 
-            </apex:pageBlockSection>
-            <apex:pageBlockSection id="additionalStuff" title="Additional info" columns="1" showHeader="false"  >
-                <apex:inputField value="{!Quote__c.Addional_Disclosure__c}" style="width:600px"  /> 
-            </apex:pageBlockSection>
-            <apex:pageBlockSection id="rxpCalc" title="Financial Calculators">
-                <c:QuoteComponent />
-            </apex:pageBlockSection>
-        </apex:pageBlock>
+    <c:QuoteComponent />
 
         <script language="JavaScript" type="text/javascript">
-        function updateHiddenValue(eId){
-            //alert('updateHiddenValue called');
-            var scope = angular.element(document.querySelector('#CBA_CALC')).scope();
 
-            var e = document.getElementById(eId);
-            e.value = scope.xmlOut.replace('<?xml version="1.0" encoding="UTF-8" ?>' , '');
-        }
 
         function LoadXMLDataFromRecord()
         {
@@ -176,35 +168,13 @@
             }
         }
 
+    
+
         LoadXMLDataFromRecord();
 
-        /*var jsReady = false;
-     
-        function isReady() {
-            return jsReady;
-        }
-     
-        function pageInit() {
-            jsReady = true;
-            //document.getElementById("{!$Component.quoteEdit.detail.data}").value = "JavaScript is ready.\n";
-        }
+        window.print();
+ 
 
-        function BeforeSave()
-        {
-            pageInit();
-            var flashObj = document["{!$Component.quoteEdit.flashSection.flashobj.flash}"];
-
-            flashObj.SaveMethod();
-        }
-
-        function PrintSchedule()
-        {
-            var flashObj =document["{!$Component.quoteEdit.flashSection.flashobj.flash}"];
-            var headetext="Client Name:"+document.getElementById("{!$Component.quoteEdit.detail.clientname}").value + "\nItem Type:" + 
-            document.getElementById("{!$Component.quoteEdit.detail.itemtype}").value+"\nStart date:" + 
-            document.getElementById("{!$Component.quoteEdit.detail.startdate}").value;
-            flashObj.PrintSchedule(headetext);
-        }*/
     </script>
     </apex:form>
 
