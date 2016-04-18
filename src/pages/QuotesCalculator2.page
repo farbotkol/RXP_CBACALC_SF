@@ -17,7 +17,7 @@
             <apex:pageBlockButtons >
                 <apex:commandButton value="Save" onclick="updateHiddenValue('{!$Component.detail.data}')" action="{!customsave}"/>
                 <apex:commandButton value="Cancel" action="{!cancel}"/>
-                <apex:commandButton value="Print Schedule" onclick="PrintSchedule()"/>
+                <apex:commandButton value="Print Schedule" onclick="PrintSchedule('{!$Component.detail.clientname}','{!$Component.detail.itemtype}','{!$Component.detail.startdate}')"/>
             </apex:pageBlockButtons>
             <apex:pageBlockSection id="detail" title="Quote" columns="2" >
                 <apex:inputField id="clientname" value="{!Quote__c.Client_Name__c}" />
@@ -176,8 +176,16 @@
             }
         }
 
-        function PrintSchedule()
+        function PrintSchedule(clientNameId, itemTypeId, startDateId)
         {
+            
+
+            var scope = angular.element(document.querySelector('#CBA_CALC')).scope();
+            scope.clientName = document.getElementById(clientNameId).value;
+            scope.itemType = document.getElementById(itemTypeId).value;
+            scope.startDate = document.getElementById(startDateId).value;
+
+            scope.$apply();
             window.print();
         }
 
