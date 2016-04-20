@@ -1,5 +1,5 @@
 <apex:component >
-    <div id='CBA_CALC' ng-controller="RealEstateController" ng-app="RealEstateApp">
+<div id='CBA_CALC' ng-controller="RealEstateController" ng-app="RealEstateApp">
 
 <div class="holder">     
     <div id="popup" class="popup" ng-cloak='ng-cloak' ng-show="showFacts">  
@@ -140,7 +140,13 @@
                     <td>{{x.ClosingBalance | currency }}</td>
                 </tr>
             </tbody>
-       
+            <tfoot>
+                <tr>
+                     <td colspan="9">
+                         *The schedule shows the principal and interest content of each instalment in terms of Division 240D of the Tax and is not indicative of the amount required to repay the contract in the event of early termination
+                     </td>
+                </tr>
+            </tfoot>
         </table>    
     </fieldset>
 
@@ -412,7 +418,7 @@
             <input 
             id='LessorRate' 
             ng-model='LessorRate' 
-            type='number'
+            type='number' step='0.01'
             ng-change='ComputeFromAmountFinanced()' percent='percent'
             />
             </div>
@@ -480,7 +486,7 @@
             <input disabled="disabled"
             id='GSTOnResidual' 
             type='text'
-            value='{{GSTOnResidual()}}'
+            value='{{GSTOnResidual()| currency}}'
         
             />
         </div>
@@ -490,7 +496,7 @@
             <input disabled="disabled"
             id='ResidualAmountIncGST' 
             type='text'
-            value='{{BalloonAmount()}}' 
+            value='{{BalloonAmount()| currency}}' 
             />
         </div>
 
@@ -940,11 +946,19 @@
                     <td>{{x.ClosingBalance | currency }}</td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                     <td colspan="9">
+                         *The schedule shows the principal and interest content of each instalment in terms of Division 240D of the Tax and is not indicative of the amount required to repay the contract in the event of early termination
+                     </td>
+                </tr>
+            </tfoot>
        
         </table>    
     </fieldset>
 
     </div>
 </div>
-     </div>
+
+</div>
 </apex:component>

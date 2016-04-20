@@ -65,7 +65,7 @@
                                           parseInt(parts[0], 10));
 
 
-                        if ( jsonData.CBACalculatorTools.CBACalculatorSchedule.Seasonal != null){
+                        if ( jsonData.CBACalculatorTools.CBACalculatorSchedule.Seasonal != null && jsonData.CBACalculatorTools.CBACalculatorSchedule.Seasonal != 'null'){
                             scope.IsSeasonal = true;
                             var seasonalStrArray = jsonData.CBACalculatorTools.CBACalculatorSchedule.Seasonal.split(',')
                             var cnt = 0;
