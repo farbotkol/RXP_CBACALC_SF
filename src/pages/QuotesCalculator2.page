@@ -7,6 +7,7 @@
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'LoanProjections.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'ObjTree.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'ng-currency.js')}"/>
+    
 
     <apex:stylesheet value="{!URLFOR($Resource.RXP_CBACALC, 'CalcCss.css')}"/>
 
@@ -17,11 +18,11 @@
             <apex:pageBlockButtons >
                 <apex:commandButton value="Save" onclick="updateHiddenValue('{!$Component.detail.data}')" action="{!customsave}"/>
                 <apex:commandButton value="Cancel" action="{!cancel}"/>
-                <apex:commandButton value="Print Schedule" onclick="PrintSchedule('{!$Component.detail.clientname}','{!$Component.detail.itemtype}','{!$Component.detail.startdate}')"/>
+                <apex:commandButton value="Print Schedule" onclick="updateHiddenValue('{!$Component.detail.data}');" action="{!customSaveNoRedirect}"/>
             </apex:pageBlockButtons>
             <apex:pageBlockSection id="detail" title="Quote" columns="2" >
                 <apex:inputField id="clientname" value="{!Quote__c.Client_Name__c}" />
-                <apex:inputField id="data" value="{!Quote__c.XML_Calculation_Data__c}" /> 
+                <apex:inputHidden id="data" value="{!Quote__c.XML_Calculation_Data__c}"  /> 
                 <apex:inputField value="{!Quote__c.Client_Phone__c}" />
                 <apex:inputField id="startdate" value="{!Quote__c.Quote_Start_Date__c}" />
                 <apex:inputField value="{!Quote__c.Client_Fax_Email__c}" />
@@ -48,7 +49,7 @@
             var e = document.getElementById(eId);
             e.value = scope.xmlOut.replace('<?xml version="1.0" encoding="UTF-8" ?>' , '');
         }
-
+        
         function LoadXMLDataFromRecord()
         {
             
@@ -176,17 +177,8 @@
             }
         }
 
-        function PrintSchedule(clientNameId, itemTypeId, startDateId)
+        function PrintSchedule()
         {
-            
-
-            /*var scope = angular.element(document.querySelector('#CBA_CALC')).scope();
-            scope.clientName = document.getElementById(clientNameId).value;
-            scope.itemType = document.getElementById(itemTypeId).value;
-            scope.startDate = document.getElementById(startDateId).value;
-
-            scope.$apply();
-            window.print();*/
 
              window.open('{!urlfor($Page.QuotesCalculatorPrint)}?id={!currentRecordId}');
         }

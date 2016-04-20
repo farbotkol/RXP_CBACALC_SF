@@ -242,7 +242,7 @@
         "id": "0998E0000008ShJQAU", 
         "lastModifiedById": "0058E000000ekMiQAI", 
         "lastModifiedByName": "luke farbotko", 
-        "lastModifiedDate": "2016-04-18 23:39:09", 
+        "lastModifiedDate": "2016-04-19 16:25:01", 
         "mmState": "clean", 
         "type": "ApexComponent"
     }, 
@@ -281,9 +281,22 @@
         "id": "0668E0000004UfMQAU", 
         "lastModifiedById": "0058E000000ekMiQAI", 
         "lastModifiedByName": "luke farbotko", 
-        "lastModifiedDate": "2016-04-18 23:12:37", 
+        "lastModifiedDate": "2016-04-19 14:48:10", 
         "mmState": "clean", 
         "type": "ApexPage"
+    }, 
+    "QuotesCalculatorLoadHelper.component": {
+        "createdById": "0058E000000ekMiQAI", 
+        "createdByName": "luke farbotko", 
+        "createdDate": "2016-04-19 13:42:16", 
+        "fileName": "unpackaged/components/QuotesCalculatorLoadHelper.component", 
+        "fullName": "QuotesCalculatorLoadHelper", 
+        "id": "0998E0000008TL4QAM", 
+        "lastModifiedById": "0058E000000ekMiQAI", 
+        "lastModifiedByName": "luke farbotko", 
+        "lastModifiedDate": "2016-04-19 13:42:16", 
+        "mmState": "clean", 
+        "type": "ApexComponent"
     }, 
     "QuotesCalculatorPrint.page": {
         "createdById": "0058E000000ekMiQAI", 
@@ -294,7 +307,7 @@
         "id": "0668E0000004WqlQAE", 
         "lastModifiedById": "0058E000000ekMiQAI", 
         "lastModifiedByName": "luke farbotko", 
-        "lastModifiedDate": "2016-04-18 22:55:27", 
+        "lastModifiedDate": "2016-04-19 14:53:57", 
         "mmState": "clean", 
         "type": "ApexPage"
     }, 
@@ -307,7 +320,7 @@
         "id": "01pD00000006Hv1IAE", 
         "lastModifiedById": "0058E000000ekMiQAI", 
         "lastModifiedByName": "luke farbotko", 
-        "lastModifiedDate": "2016-04-14 14:33:30", 
+        "lastModifiedDate": "2016-04-19 14:52:03", 
         "mmState": "clean", 
         "type": "ApexClass"
     }, 
@@ -333,7 +346,7 @@
         "id": "0818E0000004KaMQAU", 
         "lastModifiedById": "0058E000000ekMiQAI", 
         "lastModifiedByName": "luke farbotko", 
-        "lastModifiedDate": "2016-04-15 13:33:49", 
+        "lastModifiedDate": "2016-04-19 15:09:34", 
         "mmState": "clean", 
         "type": "StaticResource"
     }, 

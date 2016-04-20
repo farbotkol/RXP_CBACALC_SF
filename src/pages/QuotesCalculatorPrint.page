@@ -8,40 +8,32 @@
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'ObjTree.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.RXP_CBACALC, 'ng-currency.js')}"/>
 
-    <apex:stylesheet value="{!URLFOR($Resource.RXP_CBACALC, 'CalcCss.css')}"/>
-    <apex:form >
 
+    <apex:stylesheet value="{!URLFOR($Resource.RXP_CBACALC, 'CalcPrintCss.css')}"/>
+    <apex:form >
+    <apex:commandButton value="Back to Quote"  action="{!backToQuote}" id="backToQuote"/>
      <div>
         <label for='clientName'>Client Name</label>
-        <input disabled="disabled"
-        id='clientName' 
-        type='text'
-        value='{!Quote__c.Client_Name__c}' 
-        />
+        {!Quote__c.Client_Name__c}
+        
     </div>
     <div>
         <label for='itemType'>Item Type</label>
-        <input disabled="disabled"
-        id='itemType' 
-        type='text'
-        value='{!Quote__c.Item_Type__c}' 
-        />
+        {!Quote__c.Item_Type__c}
     </div>
     <div>
         <label for='startDate'>Start Date</label>
-        <input disabled="disabled"
-        id='startDate' 
-        type='text'
-        value='{!Quote__c.Quote_Start_Date__c}' 
-        />
+        <apex:outputText value="{0, date, dd'/'MM'/'yyyy}">
+            <apex:param value="{!Quote__c.Quote_Start_Date__c}" /> 
+        </apex:outputText>
+        
     </div>
 
     <c:QuoteComponent />
 
         <script language="JavaScript" type="text/javascript">
 
-
-        function LoadXMLDataFromRecord()
+         function LoadXMLDataFromRecord()
         {
             
             if('{!currentRecordId}' != '')
@@ -167,12 +159,15 @@
                 );
             }
         }
-
-    
+        document.title = '.'
 
         LoadXMLDataFromRecord();
 
-        window.print();
+        
+
+        setTimeout(function () {
+            window.print();
+        }, 4000);
  
 
     </script>

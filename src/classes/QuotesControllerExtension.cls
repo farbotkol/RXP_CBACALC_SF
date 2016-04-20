@@ -52,6 +52,54 @@ public with sharing class QuotesControllerExtension{
             return null;
         }
     }
+
+
+    public PageReference backToQuote()
+    {
+        PageReference acctPage = new PageReference('/apex/QuotesCalculator2?Id=' + currentRecordId);
+        acctPage.setRedirect(true);
+
+        return acctPage;
+
+    }
+
+    public PageReference customSaveNoRedirect()
+    {
+    try{
+        XMLToQuotes converter = new XMLToQuotes(obj);
+        converter.Run(obj.XML_Calculation_Data__c);
+
+        upsert obj;
+        
+        //delete existing schedules
+       List<Quote_Payment_Schedule__c> listSchedule = [SELECT 
+                                    id                                
+                                FROM Quote_Payment_Schedule__c WHERE Quote_ID__c = :obj.ID]; 
+        if (listSchedule.size()>0)
+            delete  listSchedule;
+                                       
+        for (Quote_Payment_Schedule__c schedule : converter.ScheduleList)
+        {
+            schedule.Quote_ID__c = obj.ID;
+        }
+        if (converter.ScheduleList.size()>0)
+            upsert converter.ScheduleList;
+        
+
+        PageReference acctPage = new PageReference('/apex/QuotesCalculatorPrint?Id=' + currentRecordId);
+        acctPage.setRedirect(true);
+    
+        //PageReference acctPage = new ApexPages.StandardController(obj).view();
+        //acctPage.setRedirect(true);
+
+        return acctPage;
+        }
+        catch (Exception e)
+        {
+            Log(e.getMessage());
+            return null;
+        }
+    }
         // Provides logging for messages
     private void Log(string text) {
             ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.INFO, PrettyMessage(text)));

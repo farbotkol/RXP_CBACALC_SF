@@ -133,12 +133,62 @@
             "name": "acctPage"
         }, 
         {
+            "type": "PageReference", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 59
+            }, 
+            "name": "acctPage"
+        }, 
+        {
+            "type": "XMLToQuotes", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 69
+            }, 
+            "name": "converter"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 40, 
+                "line": 75
+            }, 
+            "name": "listSchedule"
+        }, 
+        {
+            "type": "Quote_Payment_Schedule__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 40, 
+                "line": 81
+            }, 
+            "name": "schedule"
+        }, 
+        {
+            "type": "PageReference", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 89
+            }, 
+            "name": "acctPage"
+        }, 
+        {
             "type": "String", 
             "modifiers": [], 
             "references": [], 
             "location": {
                 "column": 29, 
-                "line": 56
+                "line": 104
             }, 
             "name": "text"
         }, 
@@ -148,7 +198,7 @@
             "references": [], 
             "location": {
                 "column": 41, 
-                "line": 61
+                "line": 109
             }, 
             "name": "errorMessage"
         }, 
@@ -158,7 +208,7 @@
             "references": [], 
             "location": {
                 "column": 16, 
-                "line": 63
+                "line": 111
             }, 
             "name": "valText"
         }, 
@@ -168,7 +218,7 @@
             "references": [], 
             "location": {
                 "column": 17, 
-                "line": 64
+                "line": 112
             }, 
             "name": "index"
         }, 
@@ -178,7 +228,7 @@
             "references": [], 
             "location": {
                 "column": 43, 
-                "line": 79
+                "line": 127
             }, 
             "name": "Id"
         }, 
@@ -188,7 +238,7 @@
             "references": [], 
             "location": {
                 "column": 18, 
-                "line": 81
+                "line": 129
             }, 
             "name": "quote"
         }
@@ -227,6 +277,36 @@
         }, 
         {
             "modifiers": [
+                "public"
+            ], 
+            "name": "backToQuote", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 57
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "customSaveNoRedirect", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 66
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
                 "private"
             ], 
             "name": "Log", 
@@ -240,7 +320,7 @@
             "references": [], 
             "location": {
                 "column": 18, 
-                "line": 56
+                "line": 104
             }, 
             "returnType": "void", 
             "type": null
@@ -260,7 +340,7 @@
             "references": [], 
             "location": {
                 "column": 20, 
-                "line": 61
+                "line": 109
             }, 
             "returnType": "String", 
             "type": null
@@ -281,7 +361,7 @@
             "references": [], 
             "location": {
                 "column": 25, 
-                "line": 79
+                "line": 127
             }, 
             "returnType": "String", 
             "type": null
@@ -297,7 +377,7 @@
             "references": [], 
             "location": {
                 "column": 25, 
-                "line": 86
+                "line": 134
             }, 
             "returnType": "String", 
             "type": null
