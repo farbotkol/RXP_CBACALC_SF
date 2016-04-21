@@ -137,16 +137,10 @@
                     </td>
                     <td>{{x.PrincipalAmount | currency }}</td>
                     <td>{{x.InterestAmount | currency}}</td>
-                    <td>{{x.ClosingBalance | currency }}</td>
+                    <td>{{x.ClosingBalanceRounded() | currency }}</td>
                 </tr>
             </tbody>
-            <tfoot>
-                <tr>
-                     <td colspan="9">
-                         *The schedule shows the principal and interest content of each instalment in terms of Division 240D of the Tax and is not indicative of the amount required to repay the contract in the event of early termination
-                     </td>
-                </tr>
-            </tfoot>
+       
         </table>    
     </fieldset>
 
@@ -316,10 +310,13 @@
                 <input ng-model='State' type='hidden'/>
             </div>
 
+
+
             <div><label for='LesseeRate'>Start Date</label>
-            <input type='date' ng-model='DDateText' ng-change='ComputeFromAmountFinanced()'/></div>
+            <input type='date' id='ddatepicker' ng-model='DDateText' ng-change='ComputeFromAmountFinanced()'/>{{dateformat}}</div>
             <div><input  type="hidden" style='width: 300px' ng-disabled='true' id='DDate' ng-model='DDate' ng-change='ComputeFromAmountFinanced()'/></div>        
             
+
 
             
             <div><label for='AssetType'>AssetType</label>
@@ -943,7 +940,7 @@
                     </td>
                     <td>{{x.PrincipalAmount | currency }}</td>
                     <td>{{x.InterestAmount | currency}}</td>
-                    <td>{{x.ClosingBalance | currency }}</td>
+                    <td>{{x.ClosingBalanceRounded() | currency }}</td>
                 </tr>
             </tbody>
             <tfoot>
