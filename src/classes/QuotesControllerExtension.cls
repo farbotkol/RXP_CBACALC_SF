@@ -60,7 +60,7 @@ public with sharing class QuotesControllerExtension{
         acctPage.setRedirect(true);
 
         return acctPage;
-
+ 
     }
 
     public PageReference customSaveNoRedirect()

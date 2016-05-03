@@ -1,0 +1,45 @@
+<apex:page standardController="Application__c" extensions="ApplicationRecalculateController" >
+
+
+    <apex:form >
+            <apex:pageBlock id="quoteEdit" mode="Edit" >
+            <apex:pageMessages />
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" onclick="BeforeSave()" action="{!customsave}" />
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+                  <apex:pageBlockSection id="detail" title="Calculator" columns="1" >
+                       <apex:inputField value="{!Application__c.Name}"/> 
+                       <apex:inputhidden id="data"  value="{!xmlData}"/> 
+                   </apex:pageBlockSection>
+                    <apex:pageBlockSection id="flashSection" title="Financial Calculators">
+                         <apex:flash id="flashobj" src="{!URLFOR($Resource.calculator_zip_swf,'FrontUI.swf')}" width="1150" height="900"
+                         flashVars="debug={!debug}&inputData={!xmlData}&callbackFunction=updateHiddenValue&boundDomId={!$Component.detail.data}&MortgageDutyBaseNSW={!$Setup.CalculatorFigures__c.MortgageDutyBaseNSW__c}&MortgageDutyBaseSA={!$Setup.CalculatorFigures__c.MortgageDutyRateSA__c}&MortgageDutyRateNSW={!$Setup.CalculatorFigures__c.MortgageDutyRateNSW__c}&MortgageDutyLimitNSW={!$Setup.CalculatorFigures__c.MortgageDutyLimitNSW__c}&MortgageDutyCeilFactorNSW={!$Setup.CalculatorFigures__c.MortgageDutyCeilFactorNSW__c}&MortgageDutyRateSA={!$Setup.CalculatorFigures__c.MortgageDutyRateSA__c}&MortgageDutyLimitSA={!$Setup.CalculatorFigures__c.MortgageDutyLimitSA__c}&MortgageDutyCeilFactorSA={!$Setup.CalculatorFigures__c.MortgageDutyCeilFactorSA__c}&GSTPercentRate={!$Setup.CalculatorFigures__c.GSTPercentRate__c}&LCTLimitFuelEfficient={!$Setup.CalculatorFigures__c.LCTLimitFuelEfficient__c}"/> 
+                    </apex:pageBlockSection>
+            </apex:pageBlock>
+        <script language="JavaScript" type="text/javascript">
+        function updateHiddenValue(value, eId){
+           
+            var e = document.getElementById(eId);
+            e.value = value;
+        }
+             var jsReady = false;
+     function isReady() {
+         return jsReady;
+     }
+     function pageInit() {
+         jsReady = true;
+         //document.getElementById("{!$Component.quoteEdit.detail.data}").value = "JavaScript is ready.\n";
+     }
+
+        function BeforeSave()
+{
+pageInit();
+var flashObj = document["{!$Component.quoteEdit.flashSection.flashobj.flash}"];
+
+flashObj.SaveMethod();
+}
+    </script>
+        </apex:form>
+
+</apex:page>

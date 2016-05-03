@@ -751,14 +751,17 @@ case(MOD(Expiry_Days__c,10),1,&apos;one &apos;,2,&apos;two &apos;,3,&apos;three 
     <label>Quote</label>
     <listViews>
         <fullName>All_Quotes</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>Quote_Start_Date__c</columns>
         <columns>NAME</columns>
-        <columns>Client_Name__c</columns>
-        <columns>Amount_Financed__c</columns>
         <columns>Facility_Type__c</columns>
+        <columns>Amount_Financed__c</columns>
+        <columns>Client_Name__c</columns>
         <columns>Item_Type__c</columns>
         <columns>Client_Phone__c</columns>
         <columns>Client_Fax_Email__c</columns>
         <columns>CREATEDBY_USER</columns>
+        <columns>Template_ID__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Quotes</label>
     </listViews>
@@ -788,6 +791,7 @@ case(MOD(Expiry_Days__c,10),1,&apos;one &apos;,2,&apos;two &apos;,3,&apos;three 
         <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Amount_Financed__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Days_to_Expire__c</customTabListAdditionalFields>
+        <listViewButtons>New_Version_2</listViewButtons>
         <lookupDialogsAdditionalFields>Client_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Client_Phone__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Facility_Type__c</lookupDialogsAdditionalFields>
@@ -864,5 +868,17 @@ case(MOD(Expiry_Days__c,10),1,&apos;one &apos;,2,&apos;two &apos;,3,&apos;three 
         <openType>sidebar</openType>
         <page>QuotesCalculator2</page>
         <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Version_2</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>New (Version 2)</masterLabel>
+        <openType>sidebar</openType>
+        <page>QuotesCalculator2</page>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
     </webLinks>
 </CustomObject>
