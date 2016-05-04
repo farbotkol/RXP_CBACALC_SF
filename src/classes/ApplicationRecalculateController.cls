@@ -56,8 +56,9 @@ public with sharing class ApplicationRecalculateController{
         //Convert XML -> Quote
          Quote__c quoteObj;
          XMLToQuotes converter = new XMLToQuotes(quoteObj);
+            System.debug('#### before Run' );
         converter.Run(xmlData);
-   
+   		System.debug('#### Run done' );
          quoteObj = converter .QuoteObj;
         //Convert Quote -> Application
          QuoteConverter quoteToAppConverted = new QuoteConverter();
@@ -65,10 +66,10 @@ public with sharing class ApplicationRecalculateController{
     
          boolean isValid = quoteToAppConverted.UpdateApplicationWithQuoteCalc(obj, appExtObj, recordTypename ,quoteObj, 
          converter.ScheduleList); 
-     
+     	 System.debug('#### isValid' + isValid);
          if (!isValid)
              return null;
-         
+        System.debug('#### obj' + obj);
         appExtObj.Application_ID__c = obj.ID;
         appExtObj.XML_Calculation_Data__c= xmlData;
 

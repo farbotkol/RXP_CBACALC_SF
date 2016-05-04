@@ -3,10 +3,14 @@
     <types>
         <members>ApplicationRecalculateController</members>
         <members>ApplicationRecalculationControllerTest</members>
+        <members>DocuSignAPISend</members>
+        <members>DocuSignAPISend_Test</members>
         <members>QuoteConverter</members>
         <members>QuoteConverterTest</members>
         <members>QuotesControllerExtension</members>
         <members>QuotesControllerExtensionTest</members>
+        <members>SendToDocuSignCC_Test</members>
+        <members>TestSendToDocuSignCC</members>
         <members>XMLToQuotes</members>
         <name>ApexClass</name>
     </types>
@@ -16,6 +20,7 @@
     </types>
     <types>
         <members>ApplicationRecalculatePage</members>
+        <members>ApplicationRecalculatePage2</members>
         <members>QuotesCalculator</members>
         <members>QuotesCalculator2</members>
         <name>ApexPage</name>
