@@ -23,6 +23,7 @@
         <members>ApplicationRecalculatePage2</members>
         <members>QuotesCalculator</members>
         <members>QuotesCalculator2</members>
+        <members>QuotesCalculatorPrint</members>
         <name>ApexPage</name>
     </types>
     <types>
