@@ -277,13 +277,13 @@
             <select id='InAdvanced'  name="singleSelect" ng-model="InAdvanced"
                             ng-change='ComputeFromAmountFinanced()'
                             ng-disabled='DeterminePaymentTerms'>
-                  <option value="true">In Advanced</option>
+                  <option value="true">In Advance</option>
                   <option value="false">In Arears</option>
             </select>
             <input ng-model="InAdvanced" type='hidden'/>
             </div>
 
-            <div><label for='Frequency'>Frequency</label>
+            <div><label for='Frequency'>Rental Structure</label>
                 <select id='Frequency'  name="singleSelect" ng-model="Frequency"
                                 ng-change='FrequencyChanged()'
                                 ng-disabled='DeterminePaymentTerms'>
@@ -561,7 +561,7 @@
             </div>
 
             <div  >
-                <label for='TaxOnTheContract'>Tax on the Contract</label>
+                <label for='TaxOnTheContract'>GST on the Contract</label>
                 <input disabled="disabled"
                 id='TaxOnTheContract' 
                 type='text'
@@ -852,7 +852,7 @@
             </div>
 
 
-            <div><label for='GST'>GST</label>
+            <div><label for='GST'><i>Verify from tax invoice</i> GST</label>
             <input disabled="disabled"
             id='GST' type='text'
             value='{{GST()|currency}}' 
@@ -860,7 +860,7 @@
             />
             </div>
 
-            <div><label for='LCT'>LCT</label>
+            <div><label for='LCT'><i>Verify from tax invoice</i> LCT</label>
             <input disabled="disabled"
             id='LCT' type='text'
             value='{{LCT()|currency}}' 
@@ -868,7 +868,7 @@
             </div>
 
 
-            <div ng-show='showITC'><label for='LCT'>ITC</label>
+            <div ng-show='showITC'><label for='ITC'>ITC</label>
             <input disabled="disabled"
             id='ITC' type='text'
             value='{{ITC()|currency}}' 

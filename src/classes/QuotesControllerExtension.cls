@@ -86,7 +86,7 @@ public with sharing class QuotesControllerExtension{
             upsert converter.ScheduleList;
         
 
-        PageReference acctPage = new PageReference('/apex/QuotesCalculatorPrint?Id=' + currentRecordId);
+        PageReference acctPage = new PageReference('/apex/QuotesCalculatorPrint?Id=' + obj.ID);
         acctPage.setRedirect(true);
     
         //PageReference acctPage = new ApexPages.StandardController(obj).view();
