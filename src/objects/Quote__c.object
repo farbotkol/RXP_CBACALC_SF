@@ -18,7 +18,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>Edit</actionName>
-        <content>QuotesCalculator</content>
+        <content>QuotesCalculator2</content>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Visualforce</type>
     </actionOverrides>
@@ -32,7 +32,7 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
-        <content>QuotesCalculator</content>
+        <content>QuotesCalculator2</content>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Visualforce</type>
     </actionOverrides>
@@ -791,7 +791,6 @@ case(MOD(Expiry_Days__c,10),1,&apos;one &apos;,2,&apos;two &apos;,3,&apos;three 
         <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Amount_Financed__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Days_to_Expire__c</customTabListAdditionalFields>
-        <listViewButtons>New_Version_2</listViewButtons>
         <lookupDialogsAdditionalFields>Client_Name__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Client_Phone__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Facility_Type__c</lookupDialogsAdditionalFields>
